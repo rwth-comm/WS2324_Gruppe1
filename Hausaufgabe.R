@@ -4,6 +4,4 @@
 
 # Leonie Czerniewski hat die Hausaufgabe gemacht
 
-# Blerona Bytyqi hat die Hausaufgabe gemacht.
-
-# Blerona Bytyqi hat die Hausaufgabe gemacht.
+# Blerona Bytyqi hat die Hausaufgabe gemacht. 
