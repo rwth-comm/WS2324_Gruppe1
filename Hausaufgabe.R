@@ -2,5 +2,8 @@
 
 # Elena Hahn hat die Hausaufgabe gemacht.
 
-# Leonie Czerniewski hat die Hausaufgabe gemacht
+# Leonie Czerniewski hat die Hausaufgabe gemacht.
 
+# Sophie Pretzell hat die Hausaufgabe gemacht.
+# Sophie Pretzell hat die Hausaufgabe gemacht.
+# Sophie Pretzell hat die Hausaufgabe gemacht.
