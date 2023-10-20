@@ -8,3 +8,4 @@
 # Sophie Pretzell hat die Hausaufgabe gemacht.
 # Blerona Bytyqi hat die Hausaufgabe gemacht. 
 
+# Kyra Heiden hat die Hausaufgabe gemacht 
