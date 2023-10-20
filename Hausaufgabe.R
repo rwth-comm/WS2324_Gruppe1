@@ -9,3 +9,4 @@
 # Blerona Bytyqi hat die Hausaufgabe gemacht. 
 
 # Kyra Heiden hat die Hausaufgabe gemacht 
+# Zoe-Nicole Buch hat Hausaufgabe gemacht.
