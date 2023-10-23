@@ -10,3 +10,4 @@
 
 # Kyra Heiden hat die Hausaufgabe gemacht 
 # Zoe-Nicole Buch hat Hausaufgabe gemacht.
+# Gianna Betz hat die Hausaufgabe gemacht.
