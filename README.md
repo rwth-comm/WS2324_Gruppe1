@@ -1,7 +1,15 @@
-\#Einfluss auf Anreize fürs Stromsparen \####Teammitglieder \* Gianna
-Betz \* Blerona Bytyqi \* Kyra Heiden \* Elena Hahn
+# Einfluss auf Anreize fürs Stromsparen
 
-\#Forschungsfragen Einfluss auf Anreize fürs Stromsparen
+## Teammitglieder
+
+-   Gianna Betz
+-   Blerona Bytyqi
+-   Kyra Heiden
+-   Elena Hahn
+
+# Forschungsfragen
+
+Einfluss auf Anreize fürs Stromsparen
 
 ## Faktorenraum
 
