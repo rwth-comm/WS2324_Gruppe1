@@ -1,12 +1,4 @@
-\#Einfluss auf Anreize fürs Stromsparen \####Teammitglieder \* Gianna
-Betz \* Blerona Bytyqi \* Kyra Heiden \* Elena Hahn
-
-\#Forschungsfragen Einfluss auf Anreize fürs Stromsparen
-
-## Faktorenraum
-
-![Faktorenraum](Readme_files/figure-markdown_strict/Faktorenraum.png)
-\## R Markdown
+## R Markdown
 
 This is an R Markdown document. Markdown is a simple formatting syntax
 for authoring HTML, PDF, and MS Word documents. For more details on
