@@ -14,7 +14,7 @@ Einfluss auf Anreize fürs Stromsparen
 ## Faktorenraum
 
 <figure>
-<img src="Readme_files/figure-markdown_strict/Faktorenraum.png"
+<img src="README_files/figure-markdown_strict/Faktorenraum.png"
 alt="Faktorenraum" />
 <figcaption aria-hidden="true">Faktorenraum</figcaption>
 </figure>

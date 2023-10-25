@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Einfluss auf Anreize fürs Stromsparen
 
 ## Faktorenraum
-![Faktorenraum](Readme_files/figure-markdown_strict/Faktorenraum.png)
+![Faktorenraum](README_files/figure-markdown_strict/Faktorenraum.png)
 
 ## R Markdown
 
