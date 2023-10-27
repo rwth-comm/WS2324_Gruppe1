@@ -8,7 +8,7 @@ output: md_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-# Einfluss auf Anreize fürs Stromsparen
+# Intendierte Verhaltensänderung im Klimawandel
 
 ## Teammitglieder
 * Gianna Betz
@@ -17,9 +17,10 @@ knitr::opts_chunk$set(echo = TRUE)
 * Elena Hahn
 
 # Forschungsfragen
-Einfluss auf Anreize fürs Stromsparen
+Welche Einflussfaktoren hindern oder fördern Menschen, intendierte Verhaltensänderungen bezüglich des Klimawandels in Handlungen umzusetzten?
 
 ## Faktorenraum
+Soziale Medien
 ![Faktorenraum](README_files/figure-markdown_strict/Faktorenraum.png)
 
 ## R Markdown

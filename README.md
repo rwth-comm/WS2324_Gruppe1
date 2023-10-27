@@ -1,4 +1,4 @@
-# Einfluss auf Anreize fürs Stromsparen
+# Intendierte Verhaltensänderung im Klimawandel
 
 ## Teammitglieder
 
@@ -9,14 +9,13 @@
 
 # Forschungsfragen
 
-Einfluss auf Anreize fürs Stromsparen
+Welche Einflussfaktoren hindern oder fördern Menschen, intendierte
+Verhaltensänderungen bezüglich des Klimawandels in Handlungen
+umzusetzten?
 
 ## Faktorenraum
 
-<figure>
-<img src="README_files/figure-markdown_strict/Faktorenraum.png"
-alt="Faktorenraum" />
-<figcaption aria-hidden="true">Faktorenraum</figcaption>
-</figure>
+Soziale Medien
+![Faktorenraum](README_files/figure-markdown_strict/Faktorenraum.png)
 
 ## R Markdown
