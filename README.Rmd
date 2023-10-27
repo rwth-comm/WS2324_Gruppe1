@@ -17,17 +17,10 @@ knitr::opts_chunk$set(echo = TRUE)
 * Elena Hahn
 
 # Forschungsfragen
-<<<<<<< HEAD
 Welche Einflussfaktoren hindern oder fördern Menschen, intendierte Verhaltensänderungen bezüglich des Klimawandels in Handlungen umzusetzen?
 
 ## Faktorenraum
-Soziale Medien 
-=======
-Welche Einflussfaktoren hindern oder fördern Menschen, intendierte Verhaltensänderungen bezüglich des Klimawandels in Handlungen umzusetzten?
-
-## Faktorenraum
 Soziale Medien
->>>>>>> c54b08aa5919a65259a217a8ea920c87f39dfa1d
 ![Faktorenraum](README_files/figure-markdown_strict/Faktorenraum.png)
 
 ## R Markdown
