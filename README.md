@@ -1,4 +1,4 @@
-# Einfluss auf Anreize fürs Stromsparen
+# Intendierte Verhaltensänderung im Klimawandel
 
 ## Teammitglieder
 
@@ -11,7 +11,11 @@
 
 Welche Einflussfaktoren hindern oder fördern Menschen, intendierte
 Verhaltensänderungen bezüglich des Klimawandels in Handlungen
+<<<<<<< HEAD
 umzusetzen?
+=======
+umzusetzten?
+>>>>>>> c54b08aa5919a65259a217a8ea920c87f39dfa1d
 
 ## Faktorenraum
 
