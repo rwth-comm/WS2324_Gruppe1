@@ -20,6 +20,8 @@ Soziale Medien
 
 ## Operationalisierungen
 
+**Demographische Daten**
+
 -   Alter: Freitext
 -   Geschlecht:m/w/d
 -   Bildungsabschluss:Auswahlmöglichkeiten
@@ -27,6 +29,10 @@ Soziale Medien
 -   Arbeitstatus: Auswahlmöglichkeiten
 -   Kinder im Haushalt: Auswahlmöglichkeiten (keine/ 1/ 2/ 3/ mehr)
 -   Wohnort: Auswahlmöglichkeiten (Stadt/Land etc.)
+-   Internaler/Externaler Kontrollfokus:
+
+**Nutzerfaktoren**
+
 -   Ernährungsform:Auswahlmöglichkeit (vegan/ vegetarisch/ alles/
     pescetarisch etc.)
 -   Autobesitz: (ja/nein)
@@ -45,5 +51,13 @@ Soziale Medien
 -   soziale Normen:
 -   Nutzung Social Media: Likertskala
 -   Einfluss Social Media: Likertskala
+
+**Big 5-Persönlichkeit**
+
+-   Offenheit:
+-   Gewissenhaftigkeit:
+-   Extraversion:
+-   Verträglichkeit:
+-   Eurozentrismus:
 
 ## R Markdown
