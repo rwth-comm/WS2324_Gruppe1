@@ -50,7 +50,7 @@ Soziale Medien
 -   moralische Normen:
 -   soziale Normen:
 -   Nutzung und Einfluss von Social Media: selbsterstellte
-    Einfachauswahl (4 Items)
+    Einfachauswahl / Matrix / Likertskala (4 Items)
 
 **Big 5-Persönlichkeit**
 
