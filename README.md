@@ -49,8 +49,8 @@ Soziale Medien
 -   Kostenerwartung:
 -   moralische Normen:
 -   soziale Normen:
--   Nutzung Social Media: selbsterstellte Einfachauswahl (4 Items)
--   Einfluss Social Media: selbsterstellte Einfachauswahl (1 Item)
+-   Nutzung und Einfluss von Social Media: selbsterstellte
+    Einfachauswahl (4 Items)
 
 **Big 5-Persönlichkeit**
 
