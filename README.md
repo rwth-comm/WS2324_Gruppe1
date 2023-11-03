@@ -61,19 +61,19 @@ Soziale Medien
 -   Verträglichkeit:
 -   Eurozentrismus:
 
-\*\* Unser Text:\*\* Viele Menschen unterstützen zwar die Idee des
-Umweltschutzes und haben die Absicht, nachhaltiger zu leben, aber ihre
-tatsächlichen Handlungen entsprechen oft nicht diesen Absichten. Wenn
-wir die Diskrepanz zwischen Absicht und Verhalten verstehen, können
-gezieltere Informationskampagnen, Anreize und Bildungsprogramme
-entwickelt werden, um die Umsetzung nachhaltiger Praktiken zu fördern.
-Es ermöglicht auch, Hindernisse zu identifizieren, die Menschen davon
-abhalten, ihre Absichten in die Tat umzusetzen, und gezielte Lösungen
-einzuführen, um diese Barrieren zu überwinden. In Bezug auf den
-Klimawandel ist es entscheidend, dass individuelle Absichten zur
-Reduzierung von Treibhausgasemissionen in konkrete Maßnahmen umgesetzt
-werden. Nur so können wir als Gesellschaft die notwendigen Veränderungen
-herbeiführen, um den Klimawandel einzudämmen und nachhaltiger zu leben.
+Unser Text: Viele Menschen unterstützen zwar die Idee des Umweltschutzes
+und haben die Absicht, nachhaltiger zu leben, aber ihre tatsächlichen
+Handlungen entsprechen oft nicht diesen Absichten. Wenn wir die
+Diskrepanz zwischen Absicht und Verhalten verstehen, können gezieltere
+Informationskampagnen, Anreize und Bildungsprogramme entwickelt werden,
+um die Umsetzung nachhaltiger Praktiken zu fördern. Es ermöglicht auch,
+Hindernisse zu identifizieren, die Menschen davon abhalten, ihre
+Absichten in die Tat umzusetzen, und gezielte Lösungen einzuführen, um
+diese Barrieren zu überwinden. In Bezug auf den Klimawandel ist es
+entscheidend, dass individuelle Absichten zur Reduzierung von
+Treibhausgasemissionen in konkrete Maßnahmen umgesetzt werden. Nur so
+können wir als Gesellschaft die notwendigen Veränderungen herbeiführen,
+um den Klimawandel einzudämmen und nachhaltiger zu leben.
 
 **Quelle:** Williams, M. N., & Jaftha, B. A. (2020). Perceptions of
 powerlessness are negatively associated with taking action on climate
