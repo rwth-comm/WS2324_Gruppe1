@@ -78,4 +78,53 @@ um den Klimawandel einzudämmen und nachhaltiger zu leben.
 powerlessness are negatively associated with taking action on climate
 change: A preregistered replication. Ecopsychology, 12(4)
 
+**3 Zusammenhangshypothesen**
+
+-   Je höher das Bildungsniveau desto höher ist die Bereitschaft das
+    Verhalten zu ändern
+
+-   H0 = Das Bildungsniveau hat keinen Einfluss auf Verhaltensänderungen
+
+-   Je höher das Alter desto niedriger ist die Bereitschaft das
+    Verhalten zu ändern
+
+-   H0 = Das Alter hat keinen Einfluss auf Verhaltensänderungen
+
+-   Es gibt einen Zusammenhang zwischen der Nutzungshäufigkeit sozialer
+    Medien und der Bereitschaft das Verhalten zu ändern
+
+-   H0 = Es gibt keinen Zusammenhang zwischen der Nutzungshäufigkeit
+    sozialer Medien und der Bereitschaft das Verhalten zu ändern
+
+**Zusammenhangshypothese lineare Regression**
+
+-   Die Bereitschaft das Verhalten zu ändern ist abhängig von dem
+    Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
+-   H0 = Die Bereitschaft das Verhalten zu ändern ist unabhängig von dem
+    Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
+
+**3 Unterschiedshypothesen**
+
+-   Menschen, die sich vegan ernähren sind eher dazu bereit ihr
+    Verhalten zu ändern als Menschen die sich nicht vegan ernähren
+
+-   H0 = Die Ernährung hat keinen Einfluss auf Verhaltensänderungen
+
+-   Männer und Frauen unterscheiden sich bezüglich ihrer bereitschaft
+    das Verhalten zu ändern
+
+-   H0 = Das Geschlecht hat keinen Einfluss auf Verhaltensänderungen
+
+-   Menschen die mehr über den Klimawandel wissen sind eher dazu bereit
+    ihr Verhalten zu ändern
+
+-   H0 = Das Wissen hat keinen Einfluss auf Verhaltensänderungen
+
+**Unterschiedshypothese ANOVA**
+
+-   Geschlecht und Bildung haben einen Einfluss auf die Bereitschaft das
+    Verhalten zu ändern
+-   H0 = Das Geschlecht und Bildung haben keinen Einfluss auf
+    Verhaltensänderungen
+
 ## R Markdown
