@@ -96,12 +96,19 @@ change: A preregistered replication. Ecopsychology, 12(4)
 -   H0 = Es gibt keinen Zusammenhang zwischen der Nutzungshäufigkeit
     sozialer Medien und der Bereitschaft das Verhalten zu ändern
 
+-   **Feedback JRH:** Funktioniert alles. Da die AV aber jeweils
+    identisch ist, lohnt es sich vielleicht eher hierzu eine Regression
+    aufzustellen.
+
 **Zusammenhangshypothese lineare Regression**
 
 -   Die Bereitschaft das Verhalten zu ändern ist abhängig von dem
     Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
+
 -   H0 = Die Bereitschaft das Verhalten zu ändern ist unabhängig von dem
     Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
+
+-   **Feedback JRH:** Funktioniert. Super :-)
 
 **3 Unterschiedshypothesen**
 
@@ -120,11 +127,23 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 -   H0 = Das Wissen hat keinen Einfluss auf Verhaltensänderungen
 
+-   **Feedback JRH:** Funktioniert alles. Die dritte Hypothese ist
+    vielleicht eher für eine Zusammenhangshypothese geeignet.
+
 **Unterschiedshypothese ANOVA**
 
 -   Geschlecht und Bildung haben einen Einfluss auf die Bereitschaft das
     Verhalten zu ändern
+
 -   H0 = Das Geschlecht und Bildung haben keinen Einfluss auf
     Verhaltensänderungen
+
+-   **Feedback JRH:** Funktioniert, ist aber inhaltlich vielleicht ein
+    bisschen langweilig und sehr nah an Unterschiedshypothese 2.
+    Grundsätzlich sind alle ihre Hypothesen möglich, sie haben aber ein
+    Problem mit sogenanntem p-hacking. Das lernen Sie in einer der
+    kommenden Sitzungen näher kennen. Ich würde ihnen empfehlen, mit den
+    AVs etwas zu varieren und z.B. auch mal einzelne
+    Verhaltensänderungen zu betrachten.
 
 ## R Markdown
