@@ -126,16 +126,7 @@ change: A preregistered replication. Ecopsychology, 12(4)
 -   Geschlecht (männlich / weiblich) und Bildung haben einen Einfluss
     auf das Bedrohungsempfinden und die Bereitschaft das Verhalten zu
     ändern  
-
 -   H0 = Das Geschlecht und Bildung (zu definieren) haben keinen
     Einfluss auf das Bedrohungsempfinden und Verhaltensänderungen
-
--   **Feedback JRH:** Funktioniert, ist aber inhaltlich vielleicht ein
-    bisschen langweilig und sehr nah an Unterschiedshypothese 2.
-    Grundsätzlich sind alle ihre Hypothesen möglich, sie haben aber ein
-    Problem mit sogenanntem p-hacking. Das lernen Sie in einer der
-    kommenden Sitzungen näher kennen. Ich würde ihnen empfehlen, mit den
-    AVs etwas zu varieren und z.B. auch mal einzelne
-    Verhaltensänderungen zu betrachten.
 
 ## R Markdown
