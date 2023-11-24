@@ -80,15 +80,16 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 **3 Zusammenhangshypothesen**
 
--   Je höher das Bildungsniveau desto höher ist die Bereitschaft das
-    Verhalten zu ändern
+-   Je höher das Bildungsniveau desto höher ist die Bereitschaft
+    tierische Podukte zu vermeiden
 
--   H0 = Das Bildungsniveau hat keinen Einfluss auf Verhaltensänderungen
+-   H0 = Das Bildungsniveau hat keinen Einfluss auf die bereitschaft
+    tierische Produkte zu vermeiden
 
--   Je höher das Alter desto niedriger ist die Bereitschaft das
-    Verhalten zu ändern
+-   Je höher das Alter desto höher ist die Bereitschaft Wasser zu sparen
 
--   H0 = Das Alter hat keinen Einfluss auf Verhaltensänderungen
+-   H0 = Das Alter hat keinen Einfluss auf die Bereitschaft Wasser zu
+    sparen
 
 -   Es gibt einen Zusammenhang zwischen der Nutzungshäufigkeit sozialer
     Medien und der Bereitschaft das Verhalten zu ändern
@@ -96,19 +97,12 @@ change: A preregistered replication. Ecopsychology, 12(4)
 -   H0 = Es gibt keinen Zusammenhang zwischen der Nutzungshäufigkeit
     sozialer Medien und der Bereitschaft das Verhalten zu ändern
 
--   **Feedback JRH:** Funktioniert alles. Da die AV aber jeweils
-    identisch ist, lohnt es sich vielleicht eher hierzu eine Regression
-    aufzustellen.
-
 **Zusammenhangshypothese lineare Regression**
 
 -   Die Bereitschaft das Verhalten zu ändern ist abhängig von dem
     Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
-
 -   H0 = Die Bereitschaft das Verhalten zu ändern ist unabhängig von dem
     Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
-
--   **Feedback JRH:** Funktioniert. Super :-)
 
 **3 Unterschiedshypothesen**
 
@@ -122,21 +116,19 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 -   H0 = Das Geschlecht hat keinen Einfluss auf Verhaltensänderungen
 
--   Menschen die mehr über den Klimawandel wissen sind eher dazu bereit
-    ihr Verhalten zu ändern
+-   Menschen die mehr über den Klimawandel wissen ändern eher ihr
+    Verhalten als Menschen die weniger über den Klimawandel wissen
 
 -   H0 = Das Wissen hat keinen Einfluss auf Verhaltensänderungen
 
--   **Feedback JRH:** Funktioniert alles. Die dritte Hypothese ist
-    vielleicht eher für eine Zusammenhangshypothese geeignet.
-
 **Unterschiedshypothese ANOVA**
 
--   Geschlecht und Bildung haben einen Einfluss auf die Bereitschaft das
-    Verhalten zu ändern
+-   Geschlecht (männlich / weiblich) und Bildung haben einen Einfluss
+    auf das Bedrohungsempfinden und die Bereitschaft das Verhalten zu
+    ändern  
 
--   H0 = Das Geschlecht und Bildung haben keinen Einfluss auf
-    Verhaltensänderungen
+-   H0 = Das Geschlecht und Bildung (zu definieren) haben keinen
+    Einfluss auf das Bedrohungsempfinden und Verhaltensänderungen
 
 -   **Feedback JRH:** Funktioniert, ist aber inhaltlich vielleicht ein
     bisschen langweilig und sehr nah an Unterschiedshypothese 2.
