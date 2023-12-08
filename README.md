@@ -140,7 +140,7 @@ change: A preregistered replication. Ecopsychology, 12(4)
 -   Man braucht bei einer starken Korrelation(r=0.5) ca. 28
     Proband:innen um eine Power von 0.8 zu erhalten
 
--   Bei 140 Proband:innen muss der korrelationseffekt = 0,23 sein damit
+-   Bei 140 Proband:innen muss der Korrelationseffekt = 0,23 sein damit
     der Effekt nicht übersehen werden kann
 
 ## R Markdown
