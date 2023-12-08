@@ -74,40 +74,40 @@ like_transport_6;like_transport_6;Bahn (S-Bahn, Regionalbahn, Fernferkehr);"Ange
 Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Bahn (S-Bahn, Regionalbahn, Fernferkehr)";"{""ImportId"":""QID320_6""}"
 like_transport_7;like_transport_7;Taxi;"Angenommen, Ihnen würden alle der folgenden Verkehrsmittel zur freien Verfügung stehen.
 Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Taxi";"{""ImportId"":""QID320_7""}"
-erase;BFE1;NA;Ich bin eher ruhig.;"{""ImportId"":""QID156""}"
-erase;BFA1;NA;Ich bin einfühlsam, warmherzig.;"{""ImportId"":""QID157""}"
-erase;BFC1;NA;Ich bin eher unordentlich.;"{""ImportId"":""QID158""}"
-erase;BFN1;NA;"Ich
+erase1;BFE1;NA;Ich bin eher ruhig.;"{""ImportId"":""QID156""}"
+erase2;BFA1;NA;Ich bin einfühlsam, warmherzig.;"{""ImportId"":""QID157""}"
+erase3;BFC1;NA;Ich bin eher unordentlich.;"{""ImportId"":""QID158""}"
+erase4;BFN1;NA;"Ich
   mache mir oft Sorgen.";"{""ImportId"":""QID159""}"
-erase;BFO1;NA;"Ich kann mich für Kunst, Musik
+erase5;BFO1;NA;"Ich kann mich für Kunst, Musik
   und Literatur begeistern.";"{""ImportId"":""QID160""}"
-erase;BFE2;NA;"Ich
+erase6;BFE2;NA;"Ich
   neige dazu, die Führung zu übernehmen.";"{""ImportId"":""QID161""}"
-erase;BFA2;NA;"Ich bin manchmal unhöflich und
+erase7;BFA2;NA;"Ich bin manchmal unhöflich und
   schroff.";"{""ImportId"":""QID162""}"
-erase;BFC2;NA;"Ich
+erase8;BFC2;NA;"Ich
   neige dazu, Aufgaben vor mir herzuschieben.";"{""ImportId"":""QID163""}"
-erase;BFN2;NA;"Ich bin oft deprimiert,
+erase9;BFN2;NA;"Ich bin oft deprimiert,
   niedergeschlagen.";"{""ImportId"":""QID164""}"
-erase;BFO2;NA;"Mich
+erase10;BFO2;NA;"Mich
   interessieren abstrakte Überlegungen wenig.";"{""ImportId"":""QID165""}"
-erase;BFA3;NA;"Ich
+erase11;BFA3;NA;"Ich
   schenke anderen leicht Vertrauen, glaube an das Gute im Menschen.";"{""ImportId"":""QID254""}"
-erase;BFE3;NA;"Ich bin voller Energie und
+erase12;BFE3;NA;"Ich bin voller Energie und
   Tatendrang.";"{""ImportId"":""QID253""}"
-erase;BFC3;NA;"Ich bin verlässlich, auf mich
+erase13;BFC3;NA;"Ich bin verlässlich, auf mich
   kann man zählen.";"{""ImportId"":""QID255""}"
-erase;BFN3;NA;"Ich bin
+erase14;BFN3;NA;"Ich bin
   ausgeglichen, nicht leicht aus der Ruhe zu bringen.";"{""ImportId"":""QID256""}"
-erase;BFO3;NA;"Ich bin originell, entwickle
+erase15;BFO3;NA;"Ich bin originell, entwickle
   neue Ideen.";"{""ImportId"":""QID257""}"
-erase;IC1;NA;"Ich habe
+erase16;IC1;NA;"Ich habe
   mein Leben selbst in der Hand.";"{""ImportId"":""QID237""}"
-erase;IC2;NA;"Wenn ich mich anstrenge, werde
+erase17;IC2;NA;"Wenn ich mich anstrenge, werde
   ich auch Erfolg haben.";"{""ImportId"":""QID238""}"
-erase;EC1;NA;"Egal ob
+erase18;EC1;NA;"Egal ob
   privat oder im Beruf: Mein Leben wird zum großen Teil von anderen bestimmt.";"{""ImportId"":""QID239""}"
-erase;EC2;NA;"Meine Pläne werden oft vom
+erase19;EC2;NA;"Meine Pläne werden oft vom
   Schicksal durchkreuzt.";"{""ImportId"":""QID240""}"
 ccbi1;CCBI1;NA;"Ich plane, den Konsum tierischer Produkte wie
   Fleisch, Milch oder Eier (weiterhin) zu vermeiden.";"{""ImportId"":""QID75""}"
@@ -117,7 +117,7 @@ ccbi2;CCBI2;NA;"Ich plane, (weiterhin) bewusst im Haushalt
 ccbi3;CCBI3;NA;Ich plane, (weiterhin) Fahrten mit dem Auto zu vermeiden.;"{""ImportId"":""QID77""}"
 ccbi4;CCBI4;NA;"Allgemein plane ich, (weiterhin) Maßnahmen zum Klimaschutz zu
   ergreifen.";"{""ImportId"":""QID261""}"
-ccbi5;CCBI6;NA;Ich plane, Wertstoffe (Papier, Glas, Aluminium usw.) immer zu entsprechenden Recycling-Vorrichtungen zu bringen.;"{""ImportId"":""QID309""}"
+ccbi6;CCBI6;NA;Ich plane, Wertstoffe (Papier, Glas, Aluminium usw.) immer zu entsprechenden Recycling-Vorrichtungen zu bringen.;"{""ImportId"":""QID309""}"
 ccskn;CCSKN;NA;Wie schätzen Sie Ihren Wissensstand über den Klimawandel ein?;"{""ImportId"":""QID285""}"
 cckn1;CCKN1;NA;Der heutige weltweite CO2-Wert in der Atmosphäre ist in den letzten 650.000 Jahren bereits vorgekommen.;"{""ImportId"":""QID144""}"
 cckn2;CCKN2;NA;Trotz seiner sehr geringen Konzentration in der Atmosphäre trägt Lachgas zum anthropogenen Treibhauseffekt etwa 6 % bei, da seine Wirkung als Treibhausgas 298-mal stärker ist als die von CO2.;"{""ImportId"":""QID91""}"
@@ -190,30 +190,30 @@ ccpn1;CCPN1;NA;"Ich habe eine moralische
   Verpflichtung, etwas gegen den Klimawandel zu tun.";"{""ImportId"":""QID119""}"
 ccpn2;CCPN2;NA;Ich finde, dass ich zum Klimaschutz beitragen sollte.;"{""ImportId"":""QID120""}"
 ccpn3;CCPN3;NA;Ich finde es wichtig, dass alle Menschen das Klima schützen.;"{""ImportId"":""QID125""}"
-erase;CCIN1;NA;"Meine
+erase20;CCIN1;NA;"Meine
   Freund*innen finden, ich sollte mich klimafreundlich verhalten.";"{""ImportId"":""QID121""}"
-erase;CCIN2;NA;Meine Familie findet, ich sollte mich klimafreundlich verhalten.;"{""ImportId"":""QID123""}"
-erase;CCIN3;NA;Meine Kolleg*innen finden, ich sollte mich klimafreundlich verhalten.;"{""ImportId"":""QID196""}"
-erase;CCIN4;NA;Menschen, die mir wichtig sind, finden, dass ich mich klimafreundlich verhalten sollte.;"{""ImportId"":""QID298""}"
-erase;CCDN1;NA;Meine Freunde ergreifen Maßnahmen zum Klimaschutz.;"{""ImportId"":""QID295""}"
-erase;CCDN2;NA;Meine Familie ergreift Maßnahmen zum Klimaschutz.;"{""ImportId"":""QID296""}"
-erase;CCDN3;NA;Meine Kolleg*innen ergreifen Maßnahmen zum Klimaschutz.;"{""ImportId"":""QID297""}"
-erase;CCDN4;NA;Die Menschen, die mir wichtig sind, ergreifen Maßnahmen zum Klimaschutz.;"{""ImportId"":""QID300""}"
-erase;orientation1_1;SPD;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - SPD;"{""ImportId"":""QID314_1""}"
-erase;orientation1_2;CDU / CSU;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - CDU / CSU;"{""ImportId"":""QID314_2""}"
-erase;orientation1_3;Bündnis 90 / Grüne;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - Bündnis 90 / Grüne;"{""ImportId"":""QID314_3""}"
-erase;orientation1_4;FDP;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - FDP;"{""ImportId"":""QID314_4""}"
-erase;orientation1_5;AfD;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - AfD;"{""ImportId"":""QID314_5""}"
-erase;orientation1_6;Die Linke;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - Die Linke;"{""ImportId"":""QID314_6""}"
-erase;orientation1_7;SSW;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - SSW;"{""ImportId"":""QID314_7""}"
-erase;orientation1_8;Andere:;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - Andere:;"{""ImportId"":""QID314_8""}"
-erase;orientation1_8_TEXT;Andere: – Text;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - Andere: – Text;"{""ImportId"":""QID314_8_TEXT""}"
-erase;orientation2_1;Wir brauchen einen radikalen politischen Wandel, um die Klimakrise zu bewältigen.;Bitte bewerten Sie die folgenden Aussagen: - Wir brauchen einen radikalen politischen Wandel, um die Klimakrise zu bewältigen.;"{""ImportId"":""QID315_1""}"
-erase;orientation2_2;Politik sollte konsequent an Nachhaltigkeits- und Klimazielen ausgerichtet werden.;Bitte bewerten Sie die folgenden Aussagen: - Politik sollte konsequent an Nachhaltigkeits- und Klimazielen ausgerichtet werden.;"{""ImportId"":""QID315_2""}"
-erase;orientation2_3;Politisches Umdenken ist notwendig, um die erforderlichen Veränderungen umzusetzen.;Bitte bewerten Sie die folgenden Aussagen: - Politisches Umdenken ist notwendig, um die erforderlichen Veränderungen umzusetzen.;"{""ImportId"":""QID315_3""}"
-erase;orientation2_4;Es ist wichtig, nachhaltig zu produzieren, auch auf Kosten der Wirtschaft;Bitte bewerten Sie die folgenden Aussagen: - Es ist wichtig, nachhaltig zu produzieren, auch auf Kosten der Wirtschaft;"{""ImportId"":""QID315_4""}"
-erase;activism1;NA;Haben Sie in den letzten 24 Monaten an Demonstrationen oder Protesten für den Klimaschutz teilgenommen?;"{""ImportId"":""QID316""}"
-erase;activism2;NA;Sind Sie in einer Klimaschutzbewegung aktiv, z.B. Fridays for Future?;"{""ImportId"":""QID317""}"
+erase21;CCIN2;NA;Meine Familie findet, ich sollte mich klimafreundlich verhalten.;"{""ImportId"":""QID123""}"
+erase22;CCIN3;NA;Meine Kolleg*innen finden, ich sollte mich klimafreundlich verhalten.;"{""ImportId"":""QID196""}"
+erase23;CCIN4;NA;Menschen, die mir wichtig sind, finden, dass ich mich klimafreundlich verhalten sollte.;"{""ImportId"":""QID298""}"
+erase24;CCDN1;NA;Meine Freunde ergreifen Maßnahmen zum Klimaschutz.;"{""ImportId"":""QID295""}"
+erase25;CCDN2;NA;Meine Familie ergreift Maßnahmen zum Klimaschutz.;"{""ImportId"":""QID296""}"
+erase26;CCDN3;NA;Meine Kolleg*innen ergreifen Maßnahmen zum Klimaschutz.;"{""ImportId"":""QID297""}"
+erase27;CCDN4;NA;Die Menschen, die mir wichtig sind, ergreifen Maßnahmen zum Klimaschutz.;"{""ImportId"":""QID300""}"
+erase28;orientation1_1;SPD;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - SPD;"{""ImportId"":""QID314_1""}"
+erase29;orientation1_2;CDU / CSU;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - CDU / CSU;"{""ImportId"":""QID314_2""}"
+erase30;orientation1_3;Bündnis 90 / Grüne;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - Bündnis 90 / Grüne;"{""ImportId"":""QID314_3""}"
+erase31;orientation1_4;FDP;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - FDP;"{""ImportId"":""QID314_4""}"
+erase32;orientation1_5;AfD;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - AfD;"{""ImportId"":""QID314_5""}"
+erase33;orientation1_6;Die Linke;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - Die Linke;"{""ImportId"":""QID314_6""}"
+erase34;orientation1_7;SSW;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - SSW;"{""ImportId"":""QID314_7""}"
+erase35;orientation1_8;Andere:;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - Andere:;"{""ImportId"":""QID314_8""}"
+erase36;orientation1_8_TEXT;Andere: – Text;Wie stark sind Ihre Sympathien für die verschiedenen Parteien, die aktuell im Bundestag vertreten sind? - Andere: – Text;"{""ImportId"":""QID314_8_TEXT""}"
+erase37;orientation2_1;Wir brauchen einen radikalen politischen Wandel, um die Klimakrise zu bewältigen.;Bitte bewerten Sie die folgenden Aussagen: - Wir brauchen einen radikalen politischen Wandel, um die Klimakrise zu bewältigen.;"{""ImportId"":""QID315_1""}"
+erase38;orientation2_2;Politik sollte konsequent an Nachhaltigkeits- und Klimazielen ausgerichtet werden.;Bitte bewerten Sie die folgenden Aussagen: - Politik sollte konsequent an Nachhaltigkeits- und Klimazielen ausgerichtet werden.;"{""ImportId"":""QID315_2""}"
+erase39;orientation2_3;Politisches Umdenken ist notwendig, um die erforderlichen Veränderungen umzusetzen.;Bitte bewerten Sie die folgenden Aussagen: - Politisches Umdenken ist notwendig, um die erforderlichen Veränderungen umzusetzen.;"{""ImportId"":""QID315_3""}"
+erase40;orientation2_4;Es ist wichtig, nachhaltig zu produzieren, auch auf Kosten der Wirtschaft;Bitte bewerten Sie die folgenden Aussagen: - Es ist wichtig, nachhaltig zu produzieren, auch auf Kosten der Wirtschaft;"{""ImportId"":""QID315_4""}"
+erase41;activism1;NA;Haben Sie in den letzten 24 Monaten an Demonstrationen oder Protesten für den Klimaschutz teilgenommen?;"{""ImportId"":""QID316""}"
+erase42;activism2;NA;Sind Sie in einer Klimaschutzbewegung aktiv, z.B. Fridays for Future?;"{""ImportId"":""QID317""}"
 sciencescepticism_1;sciencescepticism_1;Wissenschaft und Technik werden viele Umweltprobleme lösen, ohne dass wir unsere Lebensweise ändern müssen;Bitte bewerten Sie die folgenden Aussagen - Wissenschaft und Technik werden viele Umweltprobleme lösen, ohne dass wir unsere Lebensweise ändern müssen;"{""ImportId"":""QID318_1""}"
 sciencescepticism_2;sciencescepticism_2;Wir vertrauen zu sehr der Wissenschaft und der Technik und zu wenig unseren Gefühlen;Bitte bewerten Sie die folgenden Aussagen - Wir vertrauen zu sehr der Wissenschaft und der Technik und zu wenig unseren Gefühlen;"{""ImportId"":""QID318_2""}"
 sciencescepticism_3;sciencescepticism_3;Das meiste, was Wissenschaft und Technik hervorgebracht haben, schadet der Umwelt;Bitte bewerten Sie die folgenden Aussagen - Das meiste, was Wissenschaft und Technik hervorgebracht haben, schadet der Umwelt;"{""ImportId"":""QID318_3""}"
