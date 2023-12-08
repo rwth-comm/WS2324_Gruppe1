@@ -6,24 +6,27 @@ source("qualtricshelpers.R")
 
 # Daten einlesen ----
 
-filename <- "data/09_+Fragebogen+Anwendungsseminar_6.+November+2022_11.04.csv"
+filename <- "data/Testdaten_numeric.csv"
 raw <- load_qualtrics_csv(filename)
 
 # Zeilen entfernen ----
 
 raw %>% 
-  filter(Status == 0) %>% 
+  #filter(Status == 0) %>% 
   filter(Progress == 100) -> raw
 
 # Spalten entfernen ----
 
-raw.short <- raw[,c(-1:-5, -7:-8, -10:-17, -110)]
+raw.short <- raw[,c(-1:-5, -7:-8, -10:-18, -153)]
 
 # Spalten umbenennen ----
 
 generate_codebook(raw.short, filename, "data/codebook.csv")
 codebook <- read_codebook("data/codebook_final.csv")
 names(raw.short) <- codebook$variable
+
+raw.short %>% 
+  select(-starts_with("erase", ignore.case = F)) -> raw.short
 
 # Richtige Datentypen zuordnen ----
 
