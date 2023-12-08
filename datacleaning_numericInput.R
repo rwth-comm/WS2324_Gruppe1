@@ -17,7 +17,7 @@ raw %>%
 
 # Spalten entfernen ----
 
-raw.short <- raw[,c(-1:-5, -7:-8, -10:-18, -153)]
+raw.short <- raw[,c(-1:-5, -7:-8, -10:-18, -64:-82, -126:-148, -153,-24:-29)]
 
 # Spalten umbenennen ----
 
