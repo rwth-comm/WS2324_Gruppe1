@@ -30,14 +30,12 @@ raw.short %>%
 
 # Richtige Datentypen zuordnen ----
 
-raw.short[188,]$age = "55" 
-raw.short[266,]$age = "39"
-raw.short[285,]$age = "59"
+
 
 raw.short$age <- as.numeric(raw.short$age)
 
 raw.short$gender %>% 
-  recode(`1`= "männlich", `2` = "weiblich", `3`="divers") %>% 
+  recode(`1`= "männlich", `2` = "weiblich", `3`="andere") %>% 
   as.factor() -> raw.short$gender
 
 
@@ -51,57 +49,50 @@ raw.short$edu %>%
 ",
                      "Realschulabschluss (mittlere Reife) oder gleichwertiger Abschluss
 ",
-                     "(Fach-)Hochschulreife (Abitur)
-" , "(Fach-)Hochschulabschluss (z.B. Bachelor, Master, Diplom)
-", "Promotion
+                     "(Fach-)Hochschulreife (Abitur)" , "(Fach-)Hochschulabschluss (z.B. Bachelor, Master, Diplom)", "Promotion
 ", "andere")) -> raw.short$edu
 
-raw.short$jobtype %>% 
+
+raw.short$ccs1 %>% 
   ordered(levels = c(1:6),
-          labels = c("vollzeiterwerbstätig",
-                     "teilzeiterwerbstätig",
-                     "in beruflicher Ausbildung/Lehre",
-                     "Student*in",
-                     "Schüler*in",
-                     "nicht erwerbstätig")) -> raw.short$jobtype
+          labels = c("vegan","vegetarisch",
+                   "Ich esse im Durchschnitt weniger als einmal pro Woche Fleisch.",
+                     "Ich esse im Durchschnitt einmal pro Woche Fleisch.",
+                     "Ich esse im Durchschnitt mehrmals pro Woche Fleisch." , "Ich esse täglich Fleisch.")) -> raw.short$ccs1
+
+raw.short$ccs2 %>% 
+  ordered(levels = c(1:3),
+          labels = c("Ich habe kein eigenes Auto und auch keinen Zugriff auf ein Auto.","Ich habe kein eigenes Auto, aber regelmäßig Zugriff auf ein Auto, z.B. auf
+das Auto eines Familienmitglieds oder ein Carsharing-Auto.",
+                     "Ich habe ein eigenes Auto.")) -> raw.short$ccs2
+
+raw.short$ccs3 %>% 
+  ordered(levels = c(1:7),
+          labels = c("Ich habe im letzten Jahr privat keine Strecke mit dem Auto zurückgelegt.","1 bis 5.000 km","5.001 bis 10.000 km
+", "10.001 bis 15.000 km", "15.001 bis 20.000 km", "mehr als 20.000 km
+", "weiß nicht")) -> raw.short$ccs3
 
 
-raw.short$duration %>% 
-  ordered(levels = c(1:4),
-          labels = c("Weniger als ein Jahr 1-4 Jahre",
-                     "5-9 Jahre",
-                     "10-20 Jahre", 
-                     "Mehr als 20 Jahre")) -> raw.short$duration
+raw.short$ccs4 %>% 
+  ordered(levels = c(1:7),
+          labels = c("Ich habe im letzten Jahr beruflich keine Strecke mit dem Auto zurückgelegt.","1 bis 5.000 km","5.001 bis 10.000 km
+", "10.001 bis 15.000 km", "15.001 bis 20.000 km", "mehr als 20.000 km
+", "weiß nicht")) -> raw.short$ccs4
+
 
 # Qualitätskontrolle ----
 
-speederlimit <- median(raw.short$`Duration (in seconds)`) / 3
-raw.short <- filter(raw.short, `Duration (in seconds)` > speederlimit)
+#speederlimit <- median(raw.short$`Duration (in seconds)`) / 3
+#raw.short <- filter(raw.short, `Duration (in seconds)` > speederlimit)
 
 # Skalen berechnen ----
 
 schluesselliste <- list(
-  BF_Extraversion = c("-bf_1n","bf_6"),
-  BF_Agreeableness = c("bf_2","-bf_7n", "bf_11"),
-  BF_Openness = c("-bf_5n", "bf_10"),
-  BF_Neuroticism = c("-bf_4n", "bf_9"),
-  BF_Concientiousness= c("-bf_3n", "bf_8"),
-  ATI = vars4psych(raw.short, "ati"),
-  M_Identification = c("motivation_1","motivation_7","motivation_14"),
-  M_ExternalRegulaition = c("motivation_2","motivation_9","motivation_16"),
-  M_Amotivation = c("motivation_3","motivation_12","motivation_17"),
-  M_Intrinsic = c("motivation_4","motivation_8","motivation_15"),
-  M_Integration = c("motivation_5","motivation_10","motivation_18"),
-  M_Introjection = c("motivation_6","motivation_11","motivation_13"),
-  RF_Promotion = c("wrfq_1","wrfq_2","wrfq_3","wrfq_4","wrfq_9"),
-  RF_Prevention = c("wrfq_5","wrfq_6","wrfq_7","wrfq_8"),
-  Change_GeneralWillingness = vars4psych(raw.short, "willi"),
-  Change_Ability = vars4psych(raw.short, "abi"),
-  Change_SpecificWillingness = vars4psych(raw.short, "willi"),
-  DT_Machiavellianism = c("dark tetrad_1","dark tetrad_6","dark tetrad_9","dark tetrad_10","dark tetrad_11"),
-  DT_Narcissism = c("dark tetrad_3","-dark tetrad_7n","-dark tetrad_15n"),
-  DT_Psychopathy = c("dark tetrad_2","-dark tetrad_4n","-dark tetrad_8n","dark tetrad_13"),
-  DT_Sadism = c("dark tetrad_5","dark tetrad_10","dark tetrad_14","dark tetrad_16")
+  Verhaltensaenderung = c("ccbi1", "ccbi2", "ccbi3", "ccbi4", "ccbi5", "ccbi6"),
+  Vertrauen_Wissenschaft = c("ccdi1n","ccdi2", "-ccdi3n", "ccdi4", "-ccdi5n", "-ccdi6n", "-ccdi7n", "-ccdi8n", "ccdi9"),
+  Sorgen_Klimawandel = c("cctb1", "-cctb2n", "cctb3", "cctb4", "cctb5", "cctb6"),
+  Klimaschutz = c("ccrb1", "ccrb2", "ccrb3", "ccrb4", "ccrb5", "ccrb6", "ccrb7", "ccrb8","ccrb9", "ccrb10", "ccrb11", "ccrb12"),
+  Moral= c("ccpn1", "ccpn2", "ccpn3")
 )
 
 scores <- scoreItems(schluesselliste, items = raw.short, missing = TRUE, min = 1, max = 6)
