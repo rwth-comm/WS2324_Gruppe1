@@ -129,4 +129,18 @@ change: A preregistered replication. Ecopsychology, 12(4)
 -   H0 = Das Geschlecht und Bildung (zu definieren) haben keinen
     Einfluss auf das Bedrohungsempfinden und Verhaltensänderungen
 
+**Absatz zur Poweranalyse**
+
+-   Man braucht bei einer schwacher Korrelation(r=0.1) ca. 782
+    Proband:innen um eine Power von 0.8 zu erhalten
+
+-   Man braucht bei einer mittleren Korrelation(r=0.3) ca. 84
+    Proband:innen um eine Power von 0.8 zu erhalten
+
+-   Man braucht bei einer starken Korrelation(r=0.5) ca. 28
+    Proband:innen um eine Power von 0.8 zu erhalten
+
+-   Bei 140 Proband:innen muss der korrelationseffekt = 0,23 sein damit
+    der Effekt nicht übersehen werden kann
+
 ## R Markdown
