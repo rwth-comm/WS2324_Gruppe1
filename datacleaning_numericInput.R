@@ -40,35 +40,30 @@ raw.short$gender %>%
   recode(`1`= "männlich", `2` = "weiblich", `3`="divers") %>% 
   as.factor() -> raw.short$gender
 
-raw.short$branch %>% 
-  recode(`1`="Forschung und Entwicklung",
-         `2`="Finanzen, Versicherungen und Immobilien",
-         `3`="Lehre", 
-         `4`="Medizin (Pharma und Gesundheit",
-         `5`="Dienstleistungen und Handwerk",
-         `6`="Freizeit", 
-         `7`="Gesellschaft", 
-         `8`="Agrarwissenschaft", 
-         `9`="Technik", 
-         `10`="Sonstiges") %>% 
-  as.factor() -> raw.short$branch
+
 
 raw.short$edu %>% 
-  ordered(levels = c(1:5),
-          labels = c("Haupt- oder Realschulabschluss",
-                     "Fach-/Hochschulreife (Abitur)",
-                     "Ausbildung",
-                     "Hochschulabschluss",
-                     "Promotion")) -> raw.short$edu
+  ordered(levels = c(1:8),
+          labels = c("noch Schüler*in",
+                     "von der Schule abgegangen ohne Schulabschluss
+",
+                     "Hauptschulabschluss oder gleichwertiger Abschluss
+",
+                     "Realschulabschluss (mittlere Reife) oder gleichwertiger Abschluss
+",
+                     "(Fach-)Hochschulreife (Abitur)
+" , "(Fach-)Hochschulabschluss (z.B. Bachelor, Master, Diplom)
+", "Promotion
+", "andere")) -> raw.short$edu
 
 raw.short$jobtype %>% 
   ordered(levels = c(1:6),
-          labels = c("In Ausbildung / Studium",
-                     "Arbeitnehmer/-in und Studierende/-r",
-                     "Arbeitnehmer/-in",
-                     "Arbeitgeber/-in",
-                     "Selbstständig ohne Mitarbeiter",
-                     "Rentner/-in")) -> raw.short$jobtype
+          labels = c("vollzeiterwerbstätig",
+                     "teilzeiterwerbstätig",
+                     "in beruflicher Ausbildung/Lehre",
+                     "Student*in",
+                     "Schüler*in",
+                     "nicht erwerbstätig")) -> raw.short$jobtype
 
 
 raw.short$duration %>% 
