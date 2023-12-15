@@ -85,6 +85,8 @@ raw.short$ccs4 %>%
 #speederlimit <- median(raw.short$`Duration (in seconds)`) / 3
 #raw.short <- filter(raw.short, `Duration (in seconds)` > speederlimit)
 
+raw.short$wissen <- sum(raw.short$cckn1, raw.short$cckn2, raw.short$cckn3, raw.short$cckn4, raw.short$cckn5, raw.short$cckn6)
+
 # Skalen berechnen ----
 
 schluesselliste <- list(
@@ -98,6 +100,7 @@ schluesselliste <- list(
 scores <- scoreItems(schluesselliste, items = raw.short, missing = TRUE, min = 1, max = 6)
 
 data <- bind_cols(raw.short, as_tibble(scores$scores))
+
 
 # Lösung abspeichern ----
 
