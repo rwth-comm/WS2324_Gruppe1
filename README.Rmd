@@ -74,33 +74,58 @@ Viele Menschen unterstützen zwar die Idee des Umweltschutzes und haben die Absi
 **3 Zusammenhangshypothesen**
 
 * Je höher das Bildungsniveau desto höher ist die Bereitschaft tierische Podukte zu vermeiden
-* H0 = Das Bildungsniveau hat keinen Einfluss auf die bereitschaft tierische Produkte zu vermeiden
+```{r, echo=FALSE}
+cor.test(data$ccrb1, as.numeric(data$edu))
+```
+
 
 * Je höher das Alter desto höher ist die Bereitschaft Wasser zu sparen
-* H0 = Das Alter hat keinen Einfluss auf die Bereitschaft Wasser zu sparen
+```{r, echo=FALSE}
+cor.test((data$ccbi5), (data$age))
+```
+
 
 * Es gibt einen Zusammenhang zwischen der Nutzungshäufigkeit sozialer Medien und der Bereitschaft das Verhalten zu ändern
-* H0 = Es gibt keinen Zusammenhang zwischen der Nutzungshäufigkeit sozialer Medien und der Bereitschaft das Verhalten zu ändern
+```{r, echo=FALSE}
+cor.test(data$Verhaltensaenderung, as.numeric(data$sm1_i,data$sm1_f,data$sm1_y,data$sm1_t, data$sm1_x, data$sm1_l,data$sm1_s))
+```
+
 
 
 
 **Zusammenhangshypothese lineare Regression**
 
 * Die Bereitschaft das Verhalten zu ändern ist abhängig von dem Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
-* H0 = Die Bereitschaft das Verhalten zu ändern ist unabhängig von dem Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
+```{r, echo=FALSE}
+
+```
 
 
 
 **3 Unterschiedshypothesen**
 
 * Menschen, die sich vegan ernähren sind eher dazu bereit ihr Verhalten zu ändern als Menschen die sich nicht vegan ernähren
-* H0 = Die Ernährung hat keinen Einfluss auf Verhaltensänderungen
 
-* Männer und Frauen unterscheiden sich bezüglich ihrer bereitschaft das Verhalten zu ändern
-* H0 = Das Geschlecht hat keinen Einfluss auf Verhaltensänderungen
+```{r, echo=FALSE}
+gruppe_vegan <- data$Verhaltensaenderung[data$ccs1 == 1]
+gruppe_nicht_vegan <- data$Verhaltensaenderung[data$ccs1 == 0]
+t.test(gruppe_vegan, gruppe_nicht_vegan)
+```
+
+* Männer und Frauen unterscheiden sich bezüglich ihrer Bereitschaft das Verhalten zu ändern
+```{r, echo=FALSE}
+gruppe_frauen <- data$Verhaltensaenderung[data$gender == 1]
+gruppe_maenner <- data$Verhaltensaenderung[data$gender == 2]
+t.test(gruppe_frauen, gruppe_maenner)
+```
+
+```
+
 
 * Menschen die mehr über den Klimawandel wissen ändern eher ihr Verhalten als Menschen die weniger über den Klimawandel wissen 
-* H0 = Das Wissen hat keinen Einfluss auf Verhaltensänderungen
+
+```
+
 
 
 

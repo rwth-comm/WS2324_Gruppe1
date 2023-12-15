@@ -116,3 +116,15 @@ data %>%
 
 saveRDS(data, "data/dataFromNumeric.rds")
 
+
+
+library(ggplot2)
+
+ggplot(data) +
+ aes(x = edu, y = ccrb1) +
+ geom_jitter(size = 1.2) +
+ labs(x = "Bildungsniveau", y = "Bereitschaft Verzicht auf tierische Produkte", title = "Bereitschaft auf tierische Produkte zu verzichten in Abhängigkeit vom Bildungsniveau", 
+ subtitle = " ", caption = " ") +
+ theme_minimal()
+
+
