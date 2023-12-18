@@ -7,6 +7,8 @@ output: md_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+data <- readRDS("data/dataFromNumeric.rds")
 ```
 # Intendierte Verhaltensänderung im Klimawandel
 
@@ -76,18 +78,23 @@ Viele Menschen unterstützen zwar die Idee des Umweltschutzes und haben die Absi
 * Je höher das Bildungsniveau desto höher ist die Bereitschaft tierische Podukte zu vermeiden
 ```{r, echo=FALSE}
 cor.test(data$ccrb1, as.numeric(data$edu))
+## Feedback JRH: Es ist eine Mini-Kleinigkeit, aber ich würde den Datensatz nicht data nennen, sondern df, damit es immer genau so ist wie in den Videos. Es ist aber kein Fehler. 
+## Korrelation hatten wir in der Vorlesung noch nicht, daher können Sie das noch nicht wissen, aber Pearson-Korrelation ist hier falsch, weil ccrb1 nur ein einzelnes Item ist. 
 ```
 
 
 * Je höher das Alter desto höher ist die Bereitschaft Wasser zu sparen
 ```{r, echo=FALSE}
 cor.test((data$ccbi5), (data$age))
+## Feedback JRH: Auch hier bitte nicht Pearson benutzen.
 ```
 
 
 * Es gibt einen Zusammenhang zwischen der Nutzungshäufigkeit sozialer Medien und der Bereitschaft das Verhalten zu ändern
 ```{r, echo=FALSE}
 cor.test(data$Verhaltensaenderung, as.numeric(data$sm1_i,data$sm1_f,data$sm1_y,data$sm1_t, data$sm1_x, data$sm1_l,data$sm1_s))
+## Feedback JRH: Zu Nutzungshäufigkeit sozialer Medien fehlt aktuell noch eine Variable im Datacleaning, die Sie z.B. NHSM nennen könnten. Dann wäre der Code einfach:
+# cor.test(data$Verhaltensaenderung, data$NHSM)
 ```
 
 
@@ -107,25 +114,29 @@ cor.test(data$Verhaltensaenderung, as.numeric(data$sm1_i,data$sm1_f,data$sm1_y,d
 * Menschen, die sich vegan ernähren sind eher dazu bereit ihr Verhalten zu ändern als Menschen die sich nicht vegan ernähren
 
 ```{r, echo=FALSE}
-gruppe_vegan <- data$Verhaltensaenderung[data$ccs1 == 1]
-gruppe_nicht_vegan <- data$Verhaltensaenderung[data$ccs1 == 0]
-t.test(gruppe_vegan, gruppe_nicht_vegan)
+#gruppe_vegan <- data$Verhaltensaenderung[data$ccs1 == 1]
+#gruppe_nicht_vegan <- data$Verhaltensaenderung[data$ccs1 == 0]
+#t.test(gruppe_vegan, gruppe_nicht_vegan)
+## Feedback JRH: Sehr stark! Ist aber leicht daneben. Im Datacleaning machen Sie aus ccs1 einen ordered factor. Außerdem fehlt hinter der Bedingung ein Komma, wenn Sie so filtern wollen. 
+## 
+gruppe_vegan <- data[data$ccs1=="vegan",]
+gruppe_nicht_vegan <- data[data$ccs1!="vegan",]
+t.test(gruppe_vegan$Verhaltensaenderung, gruppe_nicht_vegan$Verhaltensaenderung)
 ```
 
 * Männer und Frauen unterscheiden sich bezüglich ihrer Bereitschaft das Verhalten zu ändern
 ```{r, echo=FALSE}
-gruppe_frauen <- data$Verhaltensaenderung[data$gender == 1]
-gruppe_maenner <- data$Verhaltensaenderung[data$gender == 2]
-t.test(gruppe_frauen, gruppe_maenner)
+#gruppe_frauen <- data$Verhaltensaenderung[data$gender == 1]
+#gruppe_maenner <- data$Verhaltensaenderung[data$gender == 2]
+#t.test(gruppe_frauen, gruppe_maenner)
+## Feedback JRH: Genau so wie die Hypothese davor. 
 ```
-
-```
-
 
 * Menschen die mehr über den Klimawandel wissen ändern eher ihr Verhalten als Menschen die weniger über den Klimawandel wissen 
 
+```{r}
+## Feedback JRH: Code fehlt. Mediansplit mit cut() oder Zusammenhangshypothese.
 ```
-
 
 
 

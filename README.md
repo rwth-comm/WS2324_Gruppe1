@@ -83,25 +83,56 @@ change: A preregistered replication. Ecopsychology, 12(4)
 -   Je höher das Bildungsniveau desto höher ist die Bereitschaft
     tierische Podukte zu vermeiden
 
--   H0 = Das Bildungsniveau hat keinen Einfluss auf die bereitschaft
-    tierische Produkte zu vermeiden
+<!-- -->
+
+    ## 
+    ##  Pearson's product-moment correlation
+    ## 
+    ## data:  data$ccrb1 and as.numeric(data$edu)
+    ## t = 0.93313, df = 76, p-value = 0.3537
+    ## alternative hypothesis: true correlation is not equal to 0
+    ## 95 percent confidence interval:
+    ##  -0.1189177  0.3213494
+    ## sample estimates:
+    ##       cor 
+    ## 0.1064294
 
 -   Je höher das Alter desto höher ist die Bereitschaft Wasser zu sparen
 
--   H0 = Das Alter hat keinen Einfluss auf die Bereitschaft Wasser zu
-    sparen
+<!-- -->
+
+    ## 
+    ##  Pearson's product-moment correlation
+    ## 
+    ## data:  (data$ccbi5) and (data$age)
+    ## t = 0.97911, df = 76, p-value = 0.3306
+    ## alternative hypothesis: true correlation is not equal to 0
+    ## 95 percent confidence interval:
+    ##  -0.1137462  0.3260426
+    ## sample estimates:
+    ##       cor 
+    ## 0.1116096
 
 -   Es gibt einen Zusammenhang zwischen der Nutzungshäufigkeit sozialer
     Medien und der Bereitschaft das Verhalten zu ändern
 
--   H0 = Es gibt keinen Zusammenhang zwischen der Nutzungshäufigkeit
-    sozialer Medien und der Bereitschaft das Verhalten zu ändern
+<!-- -->
+
+    ## 
+    ##  Pearson's product-moment correlation
+    ## 
+    ## data:  data$Verhaltensaenderung and as.numeric(data$sm1_i, data$sm1_f, data$sm1_y, data$sm1_t, data$sm1_x, data$sm1_l, data$sm1_s)
+    ## t = 0.55974, df = 98, p-value = 0.5769
+    ## alternative hypothesis: true correlation is not equal to 0
+    ## 95 percent confidence interval:
+    ##  -0.1415353  0.2500971
+    ## sample estimates:
+    ##        cor 
+    ## 0.05645217
 
 **Zusammenhangshypothese lineare Regression**
 
 -   Die Bereitschaft das Verhalten zu ändern ist abhängig von dem
-    Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
--   H0 = Die Bereitschaft das Verhalten zu ändern ist unabhängig von dem
     Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
 
 **3 Unterschiedshypothesen**
@@ -109,17 +140,29 @@ change: A preregistered replication. Ecopsychology, 12(4)
 -   Menschen, die sich vegan ernähren sind eher dazu bereit ihr
     Verhalten zu ändern als Menschen die sich nicht vegan ernähren
 
--   H0 = Die Ernährung hat keinen Einfluss auf Verhaltensänderungen
+<!-- -->
 
--   Männer und Frauen unterscheiden sich bezüglich ihrer bereitschaft
+    ## 
+    ##  Welch Two Sample t-test
+    ## 
+    ## data:  gruppe_vegan$Verhaltensaenderung and gruppe_nicht_vegan$Verhaltensaenderung
+    ## t = 0.22598, df = 21.341, p-value = 0.8234
+    ## alternative hypothesis: true difference in means is not equal to 0
+    ## 95 percent confidence interval:
+    ##  -0.3781645  0.4704722
+    ## sample estimates:
+    ## mean of x mean of y 
+    ##  3.692308  3.646154
+
+-   Männer und Frauen unterscheiden sich bezüglich ihrer Bereitschaft
     das Verhalten zu ändern
-
--   H0 = Das Geschlecht hat keinen Einfluss auf Verhaltensänderungen
 
 -   Menschen die mehr über den Klimawandel wissen ändern eher ihr
     Verhalten als Menschen die weniger über den Klimawandel wissen
 
--   H0 = Das Wissen hat keinen Einfluss auf Verhaltensänderungen
+<!-- -->
+
+    ## Feedback JRH: Code fehlt. Mediansplit mit cut() oder Zusammenhangshypothese.
 
 **Unterschiedshypothese ANOVA**
 
