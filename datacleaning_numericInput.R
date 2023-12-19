@@ -25,8 +25,9 @@ generate_codebook(raw.short, filename, "data/codebook.csv")
 codebook <- read_codebook("data/codebook_final.csv")
 names(raw.short) <- codebook$variable
 
-raw.short %>% 
-  select(-starts_with("erase", ignore.case = F)) -> raw.short
+## Feedback JRH: Diese Zeilen haben keine Funktion mehr. Ich habe sie auskommentiert. 
+#raw.short %>% 
+#  select(-starts_with("erase", ignore.case = F)) -> raw.short
 
 # Richtige Datentypen zuordnen ----
 
@@ -34,6 +35,7 @@ raw.short %>%
 
 raw.short$age <- as.numeric(raw.short$age)
 
+## Feedback JRH: In unserem Fragebogen ist weiblich die 1 :-) 
 raw.short$gender %>% 
   recode(`1`= "männlich", `2` = "weiblich", `3`="andere") %>% 
   as.factor() -> raw.short$gender
@@ -85,13 +87,20 @@ raw.short$ccs4 %>%
 #speederlimit <- median(raw.short$`Duration (in seconds)`) / 3
 #raw.short <- filter(raw.short, `Duration (in seconds)` > speederlimit)
 
-raw.short$wissen <- sum(raw.short$cckn1, raw.short$cckn2, raw.short$cckn3, raw.short$cckn4, raw.short$cckn5, raw.short$cckn6)
+## Feedback JRH: Gut gedacht, funktioniert aber leider nicht, da sum() die Punktwerte aller Probanden zusammenfasst.
+# raw.short$wissen <- sum(raw.short$cckn1, raw.short$cckn2, raw.short$cckn3, raw.short$cckn4, raw.short$cckn5, raw.short$cckn6)
+## Feedback JRH: Diese Variante hier funktioniert. Bitte nochmal nachfragen, falls Ihnen der Befehl unklar ist.
+raw.short$wissen <- rowSums(raw.short[,c("cckn1", "cckn2", "cckn3", "cckn4", "cckn5", "cckn6")], na.rm = TRUE)
+
+## Feedback JRH: Auf die selbe Weise brauchen Sie für eine ihrer Hypothesen noch eine Variable "Nutzungshäufigkeit soziale Medien".
+## Diese können Sie wie raw.short$wissen erzeugen oder als Skala in die Schlüsselliste aufnehmen. 
 
 # Skalen berechnen ----
 
+## Feedback JRH: ccdi1 ist negativ, ich habs angepasst.
 schluesselliste <- list(
   Verhaltensaenderung = c("ccbi1", "ccbi2", "ccbi3", "ccbi4", "ccbi5", "ccbi6"),
-  Vertrauen_Wissenschaft = c("ccdi1","ccdi2", "-ccdi3", "ccdi4", "-ccdi5", "-ccdi6", "-ccdi7", "-ccdi8", "ccdi9"),
+  Vertrauen_Wissenschaft = c("-ccdi1","ccdi2", "-ccdi3", "ccdi4", "-ccdi5", "-ccdi6", "-ccdi7", "-ccdi8", "ccdi9"),
   Sorgen_Klimawandel = c("cctb1", "-cctb2", "cctb3", "cctb4", "cctb5", "cctb6"),
   Klimaschutz = c("ccrb1", "ccrb2", "ccrb3", "ccrb4", "ccrb5", "ccrb6", "ccrb7", "ccrb8","ccrb9", "ccrb10", "ccrb11", "ccrb12"),
   Moral= c("ccpn1", "ccpn2", "ccpn3")
@@ -104,15 +113,17 @@ data <- bind_cols(raw.short, as_tibble(scores$scores))
 
 # Lösung abspeichern ----
 
-data %>% 
-  select(-starts_with("bf", ignore.case = F)) %>% 
-  select(-starts_with("ati", ignore.case = F)) %>%
-  select(-starts_with("wrf", ignore.case = F)) %>%
-  select(-starts_with("will", ignore.case = F)) %>%
-  select(-starts_with("abi", ignore.case = F)) %>%
-  select(-starts_with("commi", ignore.case = F)) %>%
-  select(-starts_with("motiv", ignore.case = F)) %>%
-  select(-starts_with("dark", ignore.case = F)) -> data
+## Feedback JRH: Da das nicht zu ihren Items gehört, habe ich die Zeilen auskommentiert:
+
+#data %>% 
+#  select(-starts_with("bf", ignore.case = F)) %>% 
+#  select(-starts_with("ati", ignore.case = F)) %>%
+#  select(-starts_with("wrf", ignore.case = F)) %>%
+#  select(-starts_with("will", ignore.case = F)) %>%
+#  select(-starts_with("abi", ignore.case = F)) %>%
+#  select(-starts_with("commi", ignore.case = F)) %>%
+#  select(-starts_with("motiv", ignore.case = F)) %>%
+#  select(-starts_with("dark", ignore.case = F)) -> data
 
 saveRDS(data, "data/dataFromNumeric.rds")
 
