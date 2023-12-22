@@ -25,9 +25,6 @@ generate_codebook(raw.short, filename, "data/codebook.csv")
 codebook <- read_codebook("data/codebook_final.csv")
 names(raw.short) <- codebook$variable
 
-## Feedback JRH: Diese Zeilen haben keine Funktion mehr. Ich habe sie auskommentiert. 
-#raw.short %>% 
-#  select(-starts_with("erase", ignore.case = F)) -> raw.short
 
 # Richtige Datentypen zuordnen ----
 
@@ -35,7 +32,7 @@ names(raw.short) <- codebook$variable
 
 raw.short$age <- as.numeric(raw.short$age)
 
-## Feedback JRH: In unserem Fragebogen ist weiblich die 1 :-) 
+
 raw.short$gender %>% 
   recode(`1`= "weiblich", `2` = "männlich", `3`="andere") %>% 
   as.factor() -> raw.short$gender
@@ -87,17 +84,16 @@ raw.short$ccs4 %>%
 #speederlimit <- median(raw.short$`Duration (in seconds)`) / 3
 #raw.short <- filter(raw.short, `Duration (in seconds)` > speederlimit)
 
-## Feedback JRH: Gut gedacht, funktioniert aber leider nicht, da sum() die Punktwerte aller Probanden zusammenfasst.
-# raw.short$wissen <- sum(raw.short$cckn1, raw.short$cckn2, raw.short$cckn3, raw.short$cckn4, raw.short$cckn5, raw.short$cckn6)
-## Feedback JRH: Diese Variante hier funktioniert. Bitte nochmal nachfragen, falls Ihnen der Befehl unklar ist.
+
 raw.short$wissen <- rowSums(raw.short[,c("cckn1", "cckn2", "cckn3", "cckn4", "cckn5", "cckn6")], na.rm = TRUE)
 
 ## Feedback JRH: Auf die selbe Weise brauchen Sie für eine ihrer Hypothesen noch eine Variable "Nutzungshäufigkeit soziale Medien".
 ## Diese können Sie wie raw.short$wissen erzeugen oder als Skala in die Schlüsselliste aufnehmen. 
 
+raw.short$NHSM <- rowSums(raw.short[,c("sm1_i", "sm1_f", "sm1_t", "sm1_x", "sm1_l", "sm1_s")], na.rm = TRUE)
 # Skalen berechnen ----
 
-## Feedback JRH: ccdi1 ist negativ, ich habs angepasst.
+
 schluesselliste <- list(
   Verhaltensaenderung = c("ccbi1", "ccbi2", "ccbi3", "ccbi4", "ccbi5", "ccbi6"),
   Vertrauen_Wissenschaft = c("-ccdi1","ccdi2", "-ccdi3", "ccdi4", "-ccdi5", "-ccdi6", "-ccdi7", "-ccdi8", "ccdi9"),
@@ -115,15 +111,19 @@ data <- bind_cols(raw.short, as_tibble(scores$scores))
 
 ## Feedback JRH: Da das nicht zu ihren Items gehört, habe ich die Zeilen auskommentiert:
 
-#data %>% 
-#  select(-starts_with("bf", ignore.case = F)) %>% 
-#  select(-starts_with("ati", ignore.case = F)) %>%
-#  select(-starts_with("wrf", ignore.case = F)) %>%
-#  select(-starts_with("will", ignore.case = F)) %>%
-#  select(-starts_with("abi", ignore.case = F)) %>%
-#  select(-starts_with("commi", ignore.case = F)) %>%
-#  select(-starts_with("motiv", ignore.case = F)) %>%
-#  select(-starts_with("dark", ignore.case = F)) -> data
+data %>% 
+  select(-starts_with("sm", ignore.case = F)) %>% 
+  select(-starts_with("ccs2", ignore.case = F)) %>%
+  select(-starts_with("ccs3", ignore.case = F)) %>%
+  select(-starts_with("ccs4", ignore.case = F)) %>%
+  select(-starts_with("freq", ignore.case = F)) %>%
+  select(-starts_with("like", ignore.case = F)) %>%
+  select(-starts_with("cckn", ignore.case = F)) %>%
+  select(-starts_with("cctb", ignore.case = F)) %>%
+  select(-starts_with("ccrb", ignore.case = F)) %>%
+  select(-starts_with("ccpn", ignore.case = F)) %>%
+  select(-starts_with("science", ignore.case = F)) %>%
+  select(-starts_with("ccdi", ignore.case = F)) -> data
 
 saveRDS(data, "data/dataFromNumeric.rds")
 

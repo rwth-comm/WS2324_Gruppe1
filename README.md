@@ -85,33 +85,35 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 <!-- -->
 
+    ## Warning in cor.test.default(df$ccbi1, as.numeric(df$edu), method =
+    ## c("spearman")): Kann exakten p-Wert bei Bindungen nicht berechnen
+
     ## 
-    ##  Pearson's product-moment correlation
+    ##  Spearman's rank correlation rho
     ## 
-    ## data:  data$ccrb1 and as.numeric(data$edu)
-    ## t = 0.93313, df = 76, p-value = 0.3537
-    ## alternative hypothesis: true correlation is not equal to 0
-    ## 95 percent confidence interval:
-    ##  -0.1189177  0.3213494
+    ## data:  df$ccbi1 and as.numeric(df$edu)
+    ## S = 90165, p-value = 0.2209
+    ## alternative hypothesis: true rho is not equal to 0
     ## sample estimates:
-    ##       cor 
-    ## 0.1064294
+    ##        rho 
+    ## -0.1401924
 
 -   Je höher das Alter desto höher ist die Bereitschaft Wasser zu sparen
 
 <!-- -->
 
+    ## Warning in cor.test.default((df$ccbi5), (df$age), method = c("spearman")): Kann
+    ## exakten p-Wert bei Bindungen nicht berechnen
+
     ## 
-    ##  Pearson's product-moment correlation
+    ##  Spearman's rank correlation rho
     ## 
-    ## data:  (data$ccbi5) and (data$age)
-    ## t = 0.97911, df = 76, p-value = 0.3306
-    ## alternative hypothesis: true correlation is not equal to 0
-    ## 95 percent confidence interval:
-    ##  -0.1137462  0.3260426
+    ## data:  (df$ccbi5) and (df$age)
+    ## S = 69934, p-value = 0.3133
+    ## alternative hypothesis: true rho is not equal to 0
     ## sample estimates:
-    ##       cor 
-    ## 0.1116096
+    ##       rho 
+    ## 0.1156444
 
 -   Es gibt einen Zusammenhang zwischen der Nutzungshäufigkeit sozialer
     Medien und der Bereitschaft das Verhalten zu ändern
@@ -121,19 +123,65 @@ change: A preregistered replication. Ecopsychology, 12(4)
     ## 
     ##  Pearson's product-moment correlation
     ## 
-    ## data:  data$Verhaltensaenderung and as.numeric(data$sm1_i, data$sm1_f, data$sm1_y, data$sm1_t, data$sm1_x, data$sm1_l, data$sm1_s)
-    ## t = 0.55974, df = 98, p-value = 0.5769
+    ## data:  df$Verhaltensaenderung and df$NHSM
+    ## t = 1.7954, df = 98, p-value = 0.07567
     ## alternative hypothesis: true correlation is not equal to 0
     ## 95 percent confidence interval:
-    ##  -0.1415353  0.2500971
+    ##  -0.01861664  0.36217724
     ## sample estimates:
-    ##        cor 
-    ## 0.05645217
+    ##      cor 
+    ## 0.178454
 
 **Zusammenhangshypothese lineare Regression**
 
 -   Die Bereitschaft das Verhalten zu ändern ist abhängig von dem
     Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
+
+<!-- -->
+
+    ## 
+    ##  LINEAR REGRESSION
+    ## 
+    ##  Model Fit Measures                     
+    ##  ────────────────────────────────────── 
+    ##    Model    R             R²            
+    ##  ────────────────────────────────────── 
+    ##        1    0.03014442    9.086862e-4   
+    ##        2    0.04021513    0.001617257   
+    ##  ────────────────────────────────────── 
+    ## 
+    ## 
+    ##  Model Comparisons                                                               
+    ##  ─────────────────────────────────────────────────────────────────────────────── 
+    ##    Model         Model    ΔR²            F             df1    df2    p           
+    ##  ─────────────────────────────────────────────────────────────────────────────── 
+    ##        1    -        2    7.085706e-4    0.06884269      1     97    0.7935858   
+    ##  ─────────────────────────────────────────────────────────────────────────────── 
+    ## 
+    ## 
+    ##  MODEL SPECIFIC RESULTS
+    ## 
+    ##  MODEL 1
+    ## 
+    ##  Model Coefficients - Verhaltensaenderung                                         
+    ##  ──────────────────────────────────────────────────────────────────────────────── 
+    ##    Predictor                 Estimate      SE           t            p            
+    ##  ──────────────────────────────────────────────────────────────────────────────── 
+    ##    Intercept                 3.52209232    0.4563466    7.7180209    < .0000001   
+    ##    Vertrauen_Wissenschaft    0.03862147    0.1293634    0.2985502     0.7659154   
+    ##  ──────────────────────────────────────────────────────────────────────────────── 
+    ## 
+    ## 
+    ##  MODEL 2
+    ## 
+    ##  Model Coefficients - Verhaltensaenderung                                          
+    ##  ───────────────────────────────────────────────────────────────────────────────── 
+    ##    Predictor                 Estimate       SE           t             p           
+    ##  ───────────────────────────────────────────────────────────────────────────────── 
+    ##    Intercept                  3.63778648    0.6361452     5.7184845    0.0000001   
+    ##    Vertrauen_Wissenschaft     0.03656898    0.1302175     0.2808299    0.7794390   
+    ##    Sorgen_Klimawandel        -0.03095315    0.1179712    -0.2623789    0.7935858   
+    ##  ─────────────────────────────────────────────────────────────────────────────────
 
 **3 Unterschiedshypothesen**
 
@@ -157,20 +205,88 @@ change: A preregistered replication. Ecopsychology, 12(4)
 -   Männer und Frauen unterscheiden sich bezüglich ihrer Bereitschaft
     das Verhalten zu ändern
 
+<!-- -->
+
+    ## 
+    ##  Welch Two Sample t-test
+    ## 
+    ## data:  gruppe_frauen$Verhaltensaenderung and gruppe_maenner$Verhaltensaenderung
+    ## t = -1.4104, df = 73.483, p-value = 0.1626
+    ## alternative hypothesis: true difference in means is not equal to 0
+    ## 95 percent confidence interval:
+    ##  -0.55096964  0.09429136
+    ## sample estimates:
+    ## mean of x mean of y 
+    ##  3.495238  3.723577
+
 -   Menschen die mehr über den Klimawandel wissen ändern eher ihr
     Verhalten als Menschen die weniger über den Klimawandel wissen
 
 <!-- -->
 
-    ## Feedback JRH: Code fehlt. Mediansplit mit cut() oder Zusammenhangshypothese.
+    gruppe_wissend <- df[df$wissen>= 12,]
+    gruppe_unwissend <- df[df$wissen< 12,]
+    t.test(gruppe_wissend$Verhaltensaenderung, gruppe_unwissend$Verhaltensaenderung)
 
-**Unterschiedshypothese ANOVA**
+    ## 
+    ##  Welch Two Sample t-test
+    ## 
+    ## data:  gruppe_wissend$Verhaltensaenderung and gruppe_unwissend$Verhaltensaenderung
+    ## t = -2.2013, df = 93.576, p-value = 0.03017
+    ## alternative hypothesis: true difference in means is not equal to 0
+    ## 95 percent confidence interval:
+    ##  -0.58574764 -0.03017116
+    ## sample estimates:
+    ## mean of x mean of y 
+    ##  3.496528  3.804487
+
+**Unterschiedshypothese MANOVA**
 
 -   Geschlecht (männlich / weiblich) und Bildung haben einen Einfluss
     auf das Bedrohungsempfinden und die Bereitschaft das Verhalten zu
-    ändern  
--   H0 = Das Geschlecht und Bildung (zu definieren) haben keinen
-    Einfluss auf das Bedrohungsempfinden und Verhaltensänderungen
+    ändern
+
+<!-- -->
+
+    jmv::mancova(df, deps = c("Sorgen_Klimawandel", "Verhaltensaenderung"), factors = c("gender", "edu"))
+
+    ## 
+    ##  MANCOVA
+    ## 
+    ##  Multivariate Tests                                                                         
+    ##  ────────────────────────────────────────────────────────────────────────────────────────── 
+    ##                                        value         F            df1    df2    p           
+    ##  ────────────────────────────────────────────────────────────────────────────────────────── 
+    ##    gender        Pillai's Trace        0.05211317    1.0166404      4    152    0.4007036   
+    ##                  Wilks' Lambda          0.9478987    1.0168088      4    150    0.4006629   
+    ##                  Hotelling's Trace     0.05495247    1.0166207      4    148    0.4008107   
+    ##                  Roy's Largest Root    0.05472315     2.079480      2     76    0.1320498   
+    ##                                                                                             
+    ##    edu           Pillai's Trace        0.22191411    1.3550263     14    152    0.1820610   
+    ##                  Wilks' Lambda          0.7884725    1.3518984     14    150    0.1839401   
+    ##                  Hotelling's Trace     0.25510196    1.3483960     14    148    0.1860392   
+    ##                  Roy's Largest Root    0.18319418     1.988965      7     76    0.0674933   
+    ##                                                                                             
+    ##    gender:edu    Pillai's Trace        0.22093314    0.6741463     28    152    0.8893828   
+    ##                  Wilks' Lambda          0.7890567    0.6737155     28    150    0.8896023   
+    ##                  Hotelling's Trace     0.25467565    0.6730714     28    148    0.8900033   
+    ##                  Roy's Largest Root    0.18695722     1.014911     14     76    0.4480136   
+    ##  ────────────────────────────────────────────────────────────────────────────────────────── 
+    ## 
+    ## 
+    ##  Univariate Tests                                                                                       
+    ##  ────────────────────────────────────────────────────────────────────────────────────────────────────── 
+    ##                  Dependent Variable     Sum of Squares    df    Mean Square    F            p           
+    ##  ────────────────────────────────────────────────────────────────────────────────────────────────────── 
+    ##    gender        Sorgen_Klimawandel          0.4358323     2      0.2179162    0.5674042    0.5693786   
+    ##                  Verhaltensaenderung         1.4476591     2      0.7238295    1.4371775    0.2439806   
+    ##    edu           Sorgen_Klimawandel          5.2291352     7      0.7470193    1.9450685    0.0739123   
+    ##                  Verhaltensaenderung         2.9858763     7      0.4265538    0.8469308    0.5522432   
+    ##    gender:edu    Sorgen_Klimawandel          2.0449510    14      0.1460679    0.3803277    0.9767162   
+    ##                  Verhaltensaenderung         7.0015484    14      0.5001106    0.9929793    0.4689418   
+    ##    Residuals     Sorgen_Klimawandel         29.1884149    76      0.3840581                             
+    ##                  Verhaltensaenderung        38.2771384    76      0.5036466                             
+    ##  ──────────────────────────────────────────────────────────────────────────────────────────────────────
 
 **Absatz zur Poweranalyse**
 
