@@ -103,6 +103,20 @@ change: A preregistered replication. Ecopsychology, 12(4)
     ## Sorgen_Klimawandel      3.50  0.16     0.53 0.06
     ## Klimaschutz             2.33  0.30     0.60 0.05
 
+    ggplot(df) +
+      aes(x = age) +
+      geom_histogram(bins = 30L, fill = "#112446") +
+      labs(
+        x = " Alter",
+        y = " Anzahl Proband*innen",
+        title = "XY Stichprobe ",
+        subtitle = "Histogramm Altersverteilung",
+        caption = paste0("30 bins, N=",nrow(df))
+      ) +
+      theme_minimal()
+
+![](README_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+
 **3 Zusammenhangshypothesen**
 
 -   Je höher das Bildungsniveau desto höher ist die Bereitschaft

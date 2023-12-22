@@ -77,7 +77,17 @@ Viele Menschen unterstützen zwar die Idee des Umweltschutzes und haben die Absi
 psych::describe(df[c("age", "gender", "edu", "wissen", "NHSM", "Verhaltensaenderung", "Vertrauen_Wissenschaft", "Sorgen_Klimawandel", "Klimaschutz")])
 ```
 ```{r}
-
+ggplot(df) +
+  aes(x = age) +
+  geom_histogram(bins = 30L, fill = "#112446") +
+  labs(
+    x = " Alter",
+    y = " Anzahl Proband*innen",
+    title = "XY Stichprobe ",
+    subtitle = "Histogramm Altersverteilung",
+    caption = paste0("30 bins, N=",nrow(df))
+  ) +
+  theme_minimal()
 ```
 
 
