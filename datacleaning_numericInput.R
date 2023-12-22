@@ -37,7 +37,7 @@ raw.short$age <- as.numeric(raw.short$age)
 
 ## Feedback JRH: In unserem Fragebogen ist weiblich die 1 :-) 
 raw.short$gender %>% 
-  recode(`1`= "männlich", `2` = "weiblich", `3`="andere") %>% 
+  recode(`1`= "weiblich", `2` = "männlich", `3`="andere") %>% 
   as.factor() -> raw.short$gender
 
 
