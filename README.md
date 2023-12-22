@@ -78,6 +78,31 @@ um den Klimawandel einzudämmen und nachhaltiger zu leben.
 powerlessness are negatively associated with taking action on climate
 change: A preregistered replication. Ecopsychology, 12(4)
 
+**Deskriptive Statistik**
+
+    psych::describe(df[c("age", "gender", "edu", "wissen", "NHSM", "Verhaltensaenderung", "Vertrauen_Wissenschaft", "Sorgen_Klimawandel", "Klimaschutz")])
+
+    ##                        vars   n  mean    sd median trimmed   mad   min   max
+    ## age                       1 100 46.84 29.63  46.00   46.49 39.29  0.00 98.00
+    ## gender*                   2 100  2.11  0.76   2.00    2.14  1.48  1.00  3.00
+    ## edu*                      3 100  4.51  2.22   5.00    4.51  2.97  1.00  8.00
+    ## wissen                    4 100  9.27  5.23  11.00    9.75  2.97  0.00 17.00
+    ## NHSM                      5 100 21.03  3.48  21.00   20.99  2.97 13.00 30.00
+    ## Verhaltensaenderung       6 100  3.66  0.71   3.67    3.67  0.49  1.67  5.50
+    ## Vertrauen_Wissenschaft    7 100  3.48  0.55   3.44    3.49  0.33  1.89  5.22
+    ## Sorgen_Klimawandel        8 100  3.51  0.61   3.58    3.50  0.37  1.83  5.33
+    ## Klimaschutz               9 100  3.40  0.45   3.33    3.39  0.31  2.33  4.67
+    ##                        range  skew kurtosis   se
+    ## age                    98.00  0.05    -1.18 2.96
+    ## gender*                 2.00 -0.18    -1.29 0.08
+    ## edu*                    7.00  0.04    -1.14 0.22
+    ## wissen                 17.00 -0.97    -0.60 0.52
+    ## NHSM                   17.00  0.09    -0.20 0.35
+    ## Verhaltensaenderung     3.83 -0.24     0.06 0.07
+    ## Vertrauen_Wissenschaft  3.33 -0.09     0.92 0.06
+    ## Sorgen_Klimawandel      3.50  0.16     0.53 0.06
+    ## Klimaschutz             2.33  0.30     0.60 0.05
+
 **3 Zusammenhangshypothesen**
 
 -   Je höher das Bildungsniveau desto höher ist die Bereitschaft
@@ -97,6 +122,10 @@ change: A preregistered replication. Ecopsychology, 12(4)
     ## sample estimates:
     ##        rho 
     ## -0.1401924
+
+    ## Warning: Removed 22 rows containing missing values (`geom_point()`).
+
+![](README_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
 -   Je höher das Alter desto höher ist die Bereitschaft Wasser zu sparen
 

@@ -72,12 +72,30 @@ Viele Menschen unterstützen zwar die Idee des Umweltschutzes und haben die Absi
 
 **Quelle:** Williams, M. N., & Jaftha, B. A. (2020). Perceptions of powerlessness are negatively associated with taking action on climate change: A preregistered replication. Ecopsychology, 12(4)
 
+**Deskriptive Statistik**
+```{r}
+psych::describe(df[c("age", "gender", "edu", "wissen", "NHSM", "Verhaltensaenderung", "Vertrauen_Wissenschaft", "Sorgen_Klimawandel", "Klimaschutz")])
+```
+```{r}
+
+```
+
 
 **3 Zusammenhangshypothesen**
 
 * Je höher das Bildungsniveau desto höher ist die Bereitschaft tierische Podukte zu vermeiden
 ```{r, echo=FALSE}
 cor.test(df$ccbi1, as.numeric(df$edu), method = c( "spearman")) 
+library(ggplot2)
+
+ggplot(df) +
+ aes(x = edu, y = ccbi1) +
+ geom_jitter(size = 1.2) +
+ labs(x = "Bildungsniveau", y = "Bereitschaft Verzicht auf tierische Produkte", title = "Bereitschaft auf tierische Produkte zu verzichten in Abhängigkeit vom Bildungsniveau", 
+ subtitle = " ", caption = " ") + 
+scale_x_discrete(guide = guide_axis(angle = 90)) +
+ theme_minimal()
+
 ```
 
 
