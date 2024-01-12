@@ -129,7 +129,7 @@ cor.test(df$Verhaltensaenderung, df$NHSM)
 
 * Die Bereitschaft das Verhalten zu ändern ist abhängig von dem Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
 ```{r, echo=FALSE}
-jmv::linReg(data=df, dep = "Verhaltensaenderung", covs = c("Vertrauen_Wissenschaft", "Sorgen_Klimawandel"), blocks = c("Vertrauen_Wissenschaft", "Sorgen_Klimawandel"))
+jmv::linReg(data=df, dep = "Verhaltensaenderung", covs = c("Vertrauen_Wissenschaft", "Sorgen_Klimawandel"), blocks = c("Vertrauen_Wissenschaft", "Sorgen_Klimawandel"),r2Adj = TRUE, stdEst = TRUE, modelTest = TRUE)
 ```
 
 
