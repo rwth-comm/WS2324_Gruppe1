@@ -6,13 +6,13 @@ source("qualtricshelpers.R")
 
 # Daten einlesen ----
 
-filename <- "data/Testdaten_numeric.csv"
+filename <- "data/data_numeric.csv"
 raw <- load_qualtrics_csv(filename)
 
 # Zeilen entfernen ----
 
 raw %>% 
-  #filter(Status == 0) %>% 
+  filter(Status == 0) %>% 
   filter(Progress == 100) -> raw
 
 # Spalten entfernen ----
@@ -127,7 +127,6 @@ data %>%
 
 saveRDS(data, "data/dataFromNumeric.rds")
 
-
-
+scores$alpha
 
 
