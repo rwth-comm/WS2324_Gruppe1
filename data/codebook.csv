@@ -61,8 +61,8 @@ like_transport_4;like_transport_4;Lastenfahrrad;"Angenommen, Ihnen würden alle 
 Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Lastenfahrrad";"{""ImportId"":""QID320_4""}"
 like_transport_5;like_transport_5;Bus / Straßenbahn;"Angenommen, Ihnen würden alle der folgenden Verkehrsmittel zur freien Verfügung stehen.
 Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Bus / Straßenbahn";"{""ImportId"":""QID320_5""}"
-like_transport_6;like_transport_6;Bahn (S-Bahn, Regionalbahn, Fernferkehr);"Angenommen, Ihnen würden alle der folgenden Verkehrsmittel zur freien Verfügung stehen.
-Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Bahn (S-Bahn, Regionalbahn, Fernferkehr)";"{""ImportId"":""QID320_6""}"
+like_transport_6;like_transport_6;Bahn (S-Bahn, Regionalbahn, Fernverkehr);"Angenommen, Ihnen würden alle der folgenden Verkehrsmittel zur freien Verfügung stehen.
+Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Bahn (S-Bahn, Regionalbahn, Fernverkehr)";"{""ImportId"":""QID320_6""}"
 like_transport_7;like_transport_7;Taxi;"Angenommen, Ihnen würden alle der folgenden Verkehrsmittel zur freien Verfügung stehen.
 Bitte bilden Sie eine Rangfolge, welche Verkehrsmittel Sie am liebsten wählen würden. - Taxi";"{""ImportId"":""QID320_7""}"
 CCBI1;CCBI1;NA;"Ich plane, den Konsum tierischer Produkte wie
@@ -78,7 +78,7 @@ CCSKN;CCSKN;NA;Wie schätzen Sie Ihren Wissensstand über den Klimawandel ein?;"
 CCKN1;CCKN1;NA;Der heutige weltweite CO2-Wert in der Atmosphäre ist in den letzten 650.000 Jahren bereits vorgekommen.;"{""ImportId"":""QID144""}"
 CCKN2;CCKN2;NA;Trotz seiner sehr geringen Konzentration in der Atmosphäre trägt Lachgas zum anthropogenen Treibhauseffekt etwa 6 % bei, da seine Wirkung als Treibhausgas 298-mal stärker ist als die von CO2.;"{""ImportId"":""QID91""}"
 CCKN3;CCKN3;NA;CO2 verweilt in der Regel zwischen 10 und 20 Jahren in der Atmosphäre.;"{""ImportId"":""QID92""}"
-CCKN4;CCKN4;NA;Die Erde befindet sich etwa seit 1850, also etwa seit dem Beginn der industriellen Revolution, in einer Phase der Wiedererwärmung aus der kleinen Eiszeit.;"{""ImportId"":""QID141""}"
+CCKN4;CCKN4;NA;Die Erde befindet sich seit ca. 1850, also etwa seit dem Beginn der industriellen Revolution, in einer Phase der Wiedererwärmung aus der kleinen Eiszeit.;"{""ImportId"":""QID141""}"
 CCKN5;CCKN5;NA;"Das Ozonloch ist
   eine der wesentlichen Ursachen der globalen Erwärmung.";"{""ImportId"":""QID272""}"
 CCKN6;CCKN6;NA;"Große
@@ -89,7 +89,7 @@ CCDI1;CCDI1;NA;"Wissenschaftler*innen,
 CCDI2;CCDI2;NA;"Die Klimaforschung handelt
   im Interesse der Menschheit.";"{""ImportId"":""QID59""}"
 CCDI3;CCDI3;NA;"Die
-  Klimaforschung interessiert sich nicht für das Wohlergehen der Menschheit";"{""ImportId"":""QID60""}"
+  Klimaforschung interessiert sich nicht für das Wohlergehen der Menschheit.";"{""ImportId"":""QID60""}"
 CCDI4;CCDI4;NA;"Wenn es um das Thema
   Klimawandel geht, sind Wissenschaftler*innen grundsätzlich kompetent.";"{""ImportId"":""QID177""}"
 CCDI5;CCDI5;NA;"Es ist
