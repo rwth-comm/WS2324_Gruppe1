@@ -96,8 +96,8 @@ raw.short$NHSM <- rowSums(raw.short[,c("sm1_i", "sm1_f", "sm1_t", "sm1_x", "sm1_
 
 schluesselliste <- list(
   Verhaltensaenderung = c("ccbi1", "ccbi2", "ccbi3", "ccbi4", "ccbi5", "ccbi6"),
-  Vertrauen_Wissenschaft = c("-ccdi1","ccdi2", "-ccdi3", "ccdi4", "-ccdi5", "-ccdi6", "-ccdi7", "-ccdi8", "ccdi9"),
-  Sorgen_Klimawandel = c("cctb1", "-cctb2", "cctb3", "cctb4", "cctb5", "cctb6"),
+  Vertrauen_Wissenschaft = c("ccdi1","ccdi2", "-ccdi3", "ccdi4", "ccdi5", "ccdi6", "ccdi7", "ccdi8", "ccdi9"),
+  Sorgen_Klimawandel = c("cctb1", "cctb2", "cctb3", "cctb4", "cctb5", "cctb6"),
   Klimaschutz = c("ccrb1", "ccrb2", "ccrb3", "ccrb4", "ccrb5", "ccrb6", "ccrb7", "ccrb8","ccrb9", "ccrb10", "ccrb11", "ccrb12"),
   Moral= c("ccpn1", "ccpn2", "ccpn3")
 )
