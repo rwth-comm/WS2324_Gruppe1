@@ -95,7 +95,7 @@ ggplot(df) +
 
 * Je höher das Bildungsniveau desto höher ist die Bereitschaft tierische Podukte zu vermeiden
 ```{r, echo=FALSE}
-cor.test(df$ccbi1, as.numeric(df$edu), method = c( "spearman")) 
+cor.test(df$ccbi1, as.numeric(df$edu), method = c( "kendall")) 
 library(ggplot2)
 
 ggplot(df) +
@@ -111,7 +111,7 @@ scale_x_discrete(guide = guide_axis(angle = 90)) +
 
 * Je höher das Alter desto höher ist die Bereitschaft Wasser zu sparen
 ```{r, echo=FALSE}
-cor.test((df$ccbi5), (df$age), method = c( "spearman")) 
+cor.test((df$ccbi5), (df$age), method = c( "kendall")) 
 ## Feedback JRH: Auch hier bitte nicht Pearson benutzen.
 ```
 
@@ -129,7 +129,7 @@ cor.test(df$Verhaltensaenderung, df$NHSM)
 
 * Die Bereitschaft das Verhalten zu ändern ist abhängig von dem Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
 ```{r, echo=FALSE}
-jmv::linReg(data=df, dep = "Verhaltensaenderung", covs = c("Vertrauen_Wissenschaft", "Sorgen_Klimawandel"), blocks = c("Vertrauen_Wissenschaft", "Sorgen_Klimawandel"),r2Adj = TRUE, stdEst = TRUE, modelTest = TRUE)
+jmv::linReg(data=df, dep = "Verhaltensaenderung", covs = c("Vertrauen_Wissenschaft", "Sorgen_Klimawandel"), blocks = c("Sorgen_Klimawandel", "Vertrauen_Wissenschaft"),r2Adj = TRUE, stdEst = TRUE, modelTest = TRUE)
 ```
 
 
@@ -167,7 +167,12 @@ t.test(gruppe_wissend$Verhaltensaenderung, gruppe_unwissend$Verhaltensaenderung)
 
 * Geschlecht (männlich / weiblich) und Bildung  haben einen Einfluss auf das Bedrohungsempfinden und die Bereitschaft das Verhalten zu ändern  
 ```{r}
-jmv::mancova(df, deps = c("Sorgen_Klimawandel", "Verhaltensaenderung"), factors = c("gender", "edu"))
+df %>%
+filter(gender != "divers") %>%
+filter(edu == "(Fach-)Hochschulreife (Abitur)" | edu == "(Fach-)Hochschulabschluss (z.B. Bachelor, Master, Diplom)") %>%
+droplevels() %>%
+jmv::mancova(deps = c("Sorgen_Klimawandel", "Verhaltensaenderung"), factors = c("gender", "edu"))
+
 ```
 
 
