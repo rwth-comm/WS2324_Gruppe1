@@ -80,28 +80,16 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 **Deskriptive Statistik**
 
-    psych::describe(df[c("age", "gender", "edu", "wissen", "NHSM", "Verhaltensaenderung", "Vertrauen_Wissenschaft", "Sorgen_Klimawandel", "Klimaschutz")])
+    descriptives <- psych::describe(df[c("Verhaltensaenderung", "Vertrauen_Wissenschaft", "Sorgen_Klimawandel", "Klimaschutz", "Moral")])[,c(3,4,5,8,9)]
+    descriptives$alpha <- c(0.81, 0.76, 0.87, 0.81, 0.87)
+    descriptives[,c(6,1:5)]
 
-    ##                        vars   n  mean    sd median trimmed   mad   min   max
-    ## age                       1 100 46.84 29.63  46.00   46.49 39.29  0.00 98.00
-    ## gender*                   2 100  2.11  0.76   2.00    2.14  1.48  1.00  3.00
-    ## edu*                      3 100  4.51  2.22   5.00    4.51  2.97  1.00  8.00
-    ## wissen                    4 100  9.27  5.23  11.00    9.75  2.97  0.00 17.00
-    ## NHSM                      5 100 21.03  3.48  21.00   20.99  2.97 13.00 30.00
-    ## Verhaltensaenderung       6 100  3.66  0.71   3.67    3.67  0.49  1.67  5.50
-    ## Vertrauen_Wissenschaft    7 100  3.48  0.55   3.44    3.49  0.33  1.89  5.22
-    ## Sorgen_Klimawandel        8 100  3.51  0.61   3.58    3.50  0.37  1.83  5.33
-    ## Klimaschutz               9 100  3.40  0.45   3.33    3.39  0.31  2.33  4.67
-    ##                        range  skew kurtosis   se
-    ## age                    98.00  0.05    -1.18 2.96
-    ## gender*                 2.00 -0.18    -1.29 0.08
-    ## edu*                    7.00  0.04    -1.14 0.22
-    ## wissen                 17.00 -0.97    -0.60 0.52
-    ## NHSM                   17.00  0.09    -0.20 0.35
-    ## Verhaltensaenderung     3.83 -0.24     0.06 0.07
-    ## Vertrauen_Wissenschaft  3.33 -0.09     0.92 0.06
-    ## Sorgen_Klimawandel      3.50  0.16     0.53 0.06
-    ## Klimaschutz             2.33  0.30     0.60 0.05
+    ##                        alpha mean   sd median  min  max
+    ## Verhaltensaenderung     0.81 4.16 0.94   4.33 1.00 6.00
+    ## Vertrauen_Wissenschaft  0.76 2.81 0.63   2.83 1.56 4.78
+    ## Sorgen_Klimawandel      0.87 4.87 0.91   5.00 1.50 6.00
+    ## Klimaschutz             0.81 4.14 0.74   4.17 1.92 5.83
+    ## Moral                   0.87 4.87 0.95   5.00 1.00 6.00
 
     ggplot(df) +
       aes(x = age) +
@@ -117,6 +105,13 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
+    psych::describe(df[c("age", "gender", "edu")])[,c(3,4,5,8,9)]
+
+    ##          mean    sd median min max
+    ## age     30.15 12.38     24  18  67
+    ## gender*  2.65  0.49      3   1   3
+    ## edu*     5.54  0.86      6   2   8
+
 **3 Zusammenhangshypothesen**
 
 -   Je höher das Bildungsniveau desto höher ist die Bereitschaft
@@ -124,39 +119,33 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 <!-- -->
 
-    ## Warning in cor.test.default(df$ccbi1, as.numeric(df$edu), method =
-    ## c("spearman")): Kann exakten p-Wert bei Bindungen nicht berechnen
-
     ## 
-    ##  Spearman's rank correlation rho
+    ##  Kendall's rank correlation tau
     ## 
     ## data:  df$ccbi1 and as.numeric(df$edu)
-    ## S = 90165, p-value = 0.2209
-    ## alternative hypothesis: true rho is not equal to 0
+    ## z = 1.7752, p-value = 0.07586
+    ## alternative hypothesis: true tau is not equal to 0
     ## sample estimates:
-    ##        rho 
-    ## -0.1401924
+    ##       tau 
+    ## 0.1096749
 
-    ## Warning: Removed 22 rows containing missing values (`geom_point()`).
-
-![](README_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![](README_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
 -   Je höher das Alter desto höher ist die Bereitschaft Wasser zu sparen
 
 <!-- -->
 
-    ## Warning in cor.test.default((df$ccbi5), (df$age), method = c("spearman")): Kann
-    ## exakten p-Wert bei Bindungen nicht berechnen
-
     ## 
-    ##  Spearman's rank correlation rho
+    ##  Kendall's rank correlation tau
     ## 
     ## data:  (df$ccbi5) and (df$age)
-    ## S = 69934, p-value = 0.3133
-    ## alternative hypothesis: true rho is not equal to 0
+    ## z = 1.2559, p-value = 0.2091
+    ## alternative hypothesis: true tau is not equal to 0
     ## sample estimates:
-    ##       rho 
-    ## 0.1156444
+    ##        tau 
+    ## 0.07150035
+
+![](README_files/figure-markdown_strict/unnamed-chunk-6-1.png)
 
 -   Es gibt einen Zusammenhang zwischen der Nutzungshäufigkeit sozialer
     Medien und der Bereitschaft das Verhalten zu ändern
@@ -167,13 +156,15 @@ change: A preregistered replication. Ecopsychology, 12(4)
     ##  Pearson's product-moment correlation
     ## 
     ## data:  df$Verhaltensaenderung and df$NHSM
-    ## t = 1.7954, df = 98, p-value = 0.07567
+    ## t = 0.97448, df = 184, p-value = 0.3311
     ## alternative hypothesis: true correlation is not equal to 0
     ## 95 percent confidence interval:
-    ##  -0.01861664  0.36217724
+    ##  -0.0729768  0.2133349
     ## sample estimates:
-    ##      cor 
-    ## 0.178454
+    ##        cor 
+    ## 0.07165493
+
+![](README_files/figure-markdown_strict/unnamed-chunk-7-1.png)
 
 **Zusammenhangshypothese lineare Regression**
 
@@ -185,46 +176,46 @@ change: A preregistered replication. Ecopsychology, 12(4)
     ## 
     ##  LINEAR REGRESSION
     ## 
-    ##  Model Fit Measures                                                                              
-    ##  ─────────────────────────────────────────────────────────────────────────────────────────────── 
-    ##    Model    R             R²             Adjusted R²     F             df1    df2    p           
-    ##  ─────────────────────────────────────────────────────────────────────────────────────────────── 
-    ##        1    0.03014442    9.086862e-4    -0.009286123    0.08913224      1     98    0.7659154   
-    ##        2    0.04021513    0.001617257    -0.018967954    0.07856401      2     97    0.9245016   
-    ##  ─────────────────────────────────────────────────────────────────────────────────────────────── 
+    ##  Model Fit Measures                                                                         
+    ##  ────────────────────────────────────────────────────────────────────────────────────────── 
+    ##    Model    R            R²           Adjusted R²    F           df1    df2    p            
+    ##  ────────────────────────────────────────────────────────────────────────────────────────── 
+    ##        1    0.5093147    0.2594015      0.2553765    64.44770      1    184    < .0000001   
+    ##        2    0.5394638    0.2910212      0.2832728    37.55887      2    183    < .0000001   
+    ##  ────────────────────────────────────────────────────────────────────────────────────────── 
     ## 
     ## 
-    ##  Model Comparisons                                                               
-    ##  ─────────────────────────────────────────────────────────────────────────────── 
-    ##    Model         Model    ΔR²            F             df1    df2    p           
-    ##  ─────────────────────────────────────────────────────────────────────────────── 
-    ##        1    -        2    7.085706e-4    0.06884269      1     97    0.7935858   
-    ##  ─────────────────────────────────────────────────────────────────────────────── 
+    ##  Model Comparisons                                                            
+    ##  ──────────────────────────────────────────────────────────────────────────── 
+    ##    Model         Model    ΔR²           F           df1    df2    p           
+    ##  ──────────────────────────────────────────────────────────────────────────── 
+    ##        1    -        2    0.03161976    8.161622      1    183    0.0047739   
+    ##  ──────────────────────────────────────────────────────────────────────────── 
     ## 
     ## 
     ##  MODEL SPECIFIC RESULTS
     ## 
     ##  MODEL 1
     ## 
-    ##  Model Coefficients - Verhaltensaenderung                                                            
-    ##  ─────────────────────────────────────────────────────────────────────────────────────────────────── 
-    ##    Predictor                 Estimate      SE           t            p             Stand. Estimate   
-    ##  ─────────────────────────────────────────────────────────────────────────────────────────────────── 
-    ##    Intercept                 3.52209232    0.4563466    7.7180209    < .0000001                      
-    ##    Vertrauen_Wissenschaft    0.03862147    0.1293634    0.2985502     0.7659154         0.03014442   
-    ##  ─────────────────────────────────────────────────────────────────────────────────────────────────── 
+    ##  Model Coefficients - Verhaltensaenderung                                                       
+    ##  ────────────────────────────────────────────────────────────────────────────────────────────── 
+    ##    Predictor             Estimate     SE            t           p             Stand. Estimate   
+    ##  ────────────────────────────────────────────────────────────────────────────────────────────── 
+    ##    Intercept             1.6134765    0.32252876    5.002582     0.0000013                      
+    ##    Sorgen_Klimawandel    0.5224131    0.06507443    8.027932    < .0000001          0.5093147   
+    ##  ────────────────────────────────────────────────────────────────────────────────────────────── 
     ## 
     ## 
     ##  MODEL 2
     ## 
-    ##  Model Coefficients - Verhaltensaenderung                                                             
-    ##  ──────────────────────────────────────────────────────────────────────────────────────────────────── 
-    ##    Predictor                 Estimate       SE           t             p            Stand. Estimate   
-    ##  ──────────────────────────────────────────────────────────────────────────────────────────────────── 
-    ##    Intercept                  3.63778648    0.6361452     5.7184845    0.0000001                      
-    ##    Vertrauen_Wissenschaft     0.03656898    0.1302175     0.2808299    0.7794390         0.02854243   
-    ##    Sorgen_Klimawandel        -0.03095315    0.1179712    -0.2623789    0.7935858        -0.02666715   
-    ##  ────────────────────────────────────────────────────────────────────────────────────────────────────
+    ##  Model Coefficients - Verhaltensaenderung                                                            
+    ##  ─────────────────────────────────────────────────────────────────────────────────────────────────── 
+    ##    Predictor                 Estimate      SE            t            p            Stand. Estimate   
+    ##  ─────────────────────────────────────────────────────────────────────────────────────────────────── 
+    ##    Intercept                  3.0219191    0.58581660     5.158473    0.0000006                      
+    ##    Sorgen_Klimawandel         0.4107082    0.07486586     5.485920    0.0000001          0.4004105   
+    ##    Vertrauen_Wissenschaft    -0.3078789    0.10776846    -2.856855    0.0047739         -0.2085183   
+    ##  ───────────────────────────────────────────────────────────────────────────────────────────────────
 
 **3 Unterschiedshypothesen**
 
@@ -237,13 +228,15 @@ change: A preregistered replication. Ecopsychology, 12(4)
     ##  Welch Two Sample t-test
     ## 
     ## data:  gruppe_vegan$Verhaltensaenderung and gruppe_nicht_vegan$Verhaltensaenderung
-    ## t = 0.22598, df = 21.341, p-value = 0.8234
+    ## t = 4.397, df = 5.9153, p-value = 0.004741
     ## alternative hypothesis: true difference in means is not equal to 0
     ## 95 percent confidence interval:
-    ##  -0.3781645  0.4704722
+    ##  0.4726439 1.6680968
     ## sample estimates:
     ## mean of x mean of y 
-    ##  3.692308  3.646154
+    ##  5.194444  4.124074
+
+![](README_files/figure-markdown_strict/unnamed-chunk-9-1.png)
 
 -   Männer und Frauen unterscheiden sich bezüglich ihrer Bereitschaft
     das Verhalten zu ändern
@@ -254,13 +247,15 @@ change: A preregistered replication. Ecopsychology, 12(4)
     ##  Welch Two Sample t-test
     ## 
     ## data:  gruppe_frauen$Verhaltensaenderung and gruppe_maenner$Verhaltensaenderung
-    ## t = -1.4104, df = 73.483, p-value = 0.1626
+    ## t = 1.5018, df = 104.06, p-value = 0.1362
     ## alternative hypothesis: true difference in means is not equal to 0
     ## 95 percent confidence interval:
-    ##  -0.55096964  0.09429136
+    ##  -0.07487278  0.54225937
     ## sample estimates:
     ## mean of x mean of y 
-    ##  3.495238  3.723577
+    ##  4.236339  4.002646
+
+![](README_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 
 -   Menschen die mehr über den Klimawandel wissen ändern eher ihr
     Verhalten als Menschen die weniger über den Klimawandel wissen
@@ -275,13 +270,32 @@ change: A preregistered replication. Ecopsychology, 12(4)
     ##  Welch Two Sample t-test
     ## 
     ## data:  gruppe_wissend$Verhaltensaenderung and gruppe_unwissend$Verhaltensaenderung
-    ## t = -2.2013, df = 93.576, p-value = 0.03017
+    ## t = 1.0612, df = 61.158, p-value = 0.2928
     ## alternative hypothesis: true difference in means is not equal to 0
     ## 95 percent confidence interval:
-    ##  -0.58574764 -0.03017116
+    ##  -0.1614334  0.5266142
     ## sample estimates:
     ## mean of x mean of y 
-    ##  3.496528  3.804487
+    ##  4.198851  4.016260
+
+    gruppe_wissend$wissen <- "wissend"
+    gruppe_unwissend$wissen <- "unwissend"
+    df3 <- rbind(gruppe_wissend, gruppe_unwissend)
+    df3$wissen <- as.factor(df3$wissen)
+
+    df3 %>% 
+      group_by(wissen) %>% 
+      summarise(mean = mean(Verhaltensaenderung, na.rm = TRUE), ci = std.error(Verhaltensaenderung)*1.96) %>% 
+    ggplot() +
+     aes(x = wissen, y = mean, ymin = mean - ci, ymax = mean + ci) +
+      geom_errorbar(colour = rwthcolor$black, width = 0.2) +
+     geom_point(size=3) + 
+    scale_y_continuous(breaks = seq(1, 6, by = 1), limits = c(1,6)) +
+     theme_minimal() + 
+    labs(x = "Wissen über Klimawandel", y = "Bereitschaft Verhalten zu ändern", title = "Bereitschaft Verhalten zu ändern in Abhängigkeit vom Wissen über den Klimawandel", 
+     subtitle = " ", caption = " ")
+
+![](README_files/figure-markdown_strict/unnamed-chunk-11-1.png)
 
 **Unterschiedshypothese MANOVA**
 
@@ -291,45 +305,84 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 <!-- -->
 
-    jmv::mancova(df, deps = c("Sorgen_Klimawandel", "Verhaltensaenderung"), factors = c("gender", "edu"))
+    df %>%
+    filter(gender != "andere") %>%
+    filter(edu == "(Fach-)Hochschulreife (Abitur)" | edu == "(Fach-)Hochschulabschluss (z.B. Bachelor, Master, Diplom)") %>%
+    droplevels() %>%
+    jmv::mancova(deps = c("Sorgen_Klimawandel", "Verhaltensaenderung"), factors = c("gender", "edu"))
 
     ## 
     ##  MANCOVA
     ## 
-    ##  Multivariate Tests                                                                         
-    ##  ────────────────────────────────────────────────────────────────────────────────────────── 
-    ##                                        value         F            df1    df2    p           
-    ##  ────────────────────────────────────────────────────────────────────────────────────────── 
-    ##    gender        Pillai's Trace        0.05211317    1.0166404      4    152    0.4007036   
-    ##                  Wilks' Lambda          0.9478987    1.0168088      4    150    0.4006629   
-    ##                  Hotelling's Trace     0.05495247    1.0166207      4    148    0.4008107   
-    ##                  Roy's Largest Root    0.05472315     2.079480      2     76    0.1320498   
-    ##                                                                                             
-    ##    edu           Pillai's Trace        0.22191411    1.3550263     14    152    0.1820610   
-    ##                  Wilks' Lambda          0.7884725    1.3518984     14    150    0.1839401   
-    ##                  Hotelling's Trace     0.25510196    1.3483960     14    148    0.1860392   
-    ##                  Roy's Largest Root    0.18319418     1.988965      7     76    0.0674933   
-    ##                                                                                             
-    ##    gender:edu    Pillai's Trace        0.22093314    0.6741463     28    152    0.8893828   
-    ##                  Wilks' Lambda          0.7890567    0.6737155     28    150    0.8896023   
-    ##                  Hotelling's Trace     0.25467565    0.6730714     28    148    0.8900033   
-    ##                  Roy's Largest Root    0.18695722     1.014911     14     76    0.4480136   
-    ##  ────────────────────────────────────────────────────────────────────────────────────────── 
+    ##  Multivariate Tests                                                                           
+    ##  ──────────────────────────────────────────────────────────────────────────────────────────── 
+    ##                                        value          F             df1    df2    p           
+    ##  ──────────────────────────────────────────────────────────────────────────────────────────── 
+    ##    gender        Pillai's Trace        0.117474305    10.4492515      2    157    0.0000549   
+    ##                  Wilks' Lambda           0.8825257    10.4492515      2    157    0.0000549   
+    ##                  Hotelling's Trace     0.133111484    10.4492515      2    157    0.0000549   
+    ##                  Roy's Largest Root    0.133111484    10.4492515      2    157    0.0000549   
+    ##                                                                                               
+    ##    edu           Pillai's Trace        0.018381855     1.4699969      2    157    0.2330732   
+    ##                  Wilks' Lambda           0.9816181     1.4699969      2    157    0.2330732   
+    ##                  Hotelling's Trace     0.018726075     1.4699969      2    157    0.2330732   
+    ##                  Roy's Largest Root    0.018726075     1.4699969      2    157    0.2330732   
+    ##                                                                                               
+    ##    gender:edu    Pillai's Trace        0.004090220     0.3224010      2    157    0.7248861   
+    ##                  Wilks' Lambda           0.9959098     0.3224010      2    157    0.7248861   
+    ##                  Hotelling's Trace     0.004107019     0.3224010      2    157    0.7248861   
+    ##                  Roy's Largest Root    0.004107019     0.3224010      2    157    0.7248861   
+    ##  ──────────────────────────────────────────────────────────────────────────────────────────── 
     ## 
     ## 
-    ##  Univariate Tests                                                                                       
-    ##  ────────────────────────────────────────────────────────────────────────────────────────────────────── 
-    ##                  Dependent Variable     Sum of Squares    df    Mean Square    F            p           
-    ##  ────────────────────────────────────────────────────────────────────────────────────────────────────── 
-    ##    gender        Sorgen_Klimawandel          0.4358323     2      0.2179162    0.5674042    0.5693786   
-    ##                  Verhaltensaenderung         1.4476591     2      0.7238295    1.4371775    0.2439806   
-    ##    edu           Sorgen_Klimawandel          5.2291352     7      0.7470193    1.9450685    0.0739123   
-    ##                  Verhaltensaenderung         2.9858763     7      0.4265538    0.8469308    0.5522432   
-    ##    gender:edu    Sorgen_Klimawandel          2.0449510    14      0.1460679    0.3803277    0.9767162   
-    ##                  Verhaltensaenderung         7.0015484    14      0.5001106    0.9929793    0.4689418   
-    ##    Residuals     Sorgen_Klimawandel         29.1884149    76      0.3840581                             
-    ##                  Verhaltensaenderung        38.2771384    76      0.5036466                             
-    ##  ──────────────────────────────────────────────────────────────────────────────────────────────────────
+    ##  Univariate Tests                                                                                         
+    ##  ──────────────────────────────────────────────────────────────────────────────────────────────────────── 
+    ##                  Dependent Variable     Sum of Squares    df     Mean Square    F             p           
+    ##  ──────────────────────────────────────────────────────────────────────────────────────────────────────── 
+    ##    gender        Sorgen_Klimawandel         13.9290920      1     13.9290920    20.8587818    0.0000099   
+    ##                  Verhaltensaenderung         2.2647793      1      2.2647793     2.8028511    0.0960752   
+    ##    edu           Sorgen_Klimawandel          1.9666189      1      1.9666189     2.9450071    0.0881033   
+    ##                  Verhaltensaenderung         0.6164230      1      0.6164230     0.7628743    0.3837560   
+    ##    gender:edu    Sorgen_Klimawandel          0.1369479      1      0.1369479     0.2050792    0.6512732   
+    ##                  Verhaltensaenderung         0.5151794      1      0.5151794     0.6375770    0.4257881   
+    ##    Residuals     Sorgen_Klimawandel        105.5093508    158      0.6677807                              
+    ##                  Verhaltensaenderung       127.6682616    158      0.8080270                              
+    ##  ────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+    df %>%
+    filter(gender != "andere") %>%
+    filter(edu == "(Fach-)Hochschulreife (Abitur)" | edu == "(Fach-)Hochschulabschluss (z.B. Bachelor, Master, Diplom)") %>%
+    droplevels() %>%
+      jmv::ANOVA(dep = Sorgen_Klimawandel, 
+                   factors = c("gender", "edu"),
+                  emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("gender"),c("edu"))) -> res1
+
+
+    df %>%
+    filter(gender != "andere") %>%
+    filter(edu == "(Fach-)Hochschulreife (Abitur)" | edu == "(Fach-)Hochschulabschluss (z.B. Bachelor, Master, Diplom)") %>%
+    droplevels() %>%
+      jmv::ANOVA(dep = Verhaltensaenderung, 
+                   factors = c("gender", "edu"),
+                  emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("gender"),c("edu"))) -> res2
+
+
+    haupteffekt1 <- res1$emm[[1]]$emmTable$asDF
+    haupteffekt2 <- res1$emm[[2]]$emmTable$asDF
+    haupteffekt3 <- res1$emm[[1]]$emmTable$asDF
+    haupteffekt4 <- res1$emm[[2]]$emmTable$asDF
+
+    haupteffekt1 %>% 
+    ggplot() +
+     aes(x = gender, y = mean, ymin = lower, ymax = upper) +
+        geom_errorbar(colour = "black", width = 0.2) +
+     geom_point(size=3) +
+      scale_y_continuous(breaks = seq(1, 6, by = 1), limits = c(1,6)) +
+     theme_minimal() + 
+    labs(x = "Geschlecht", y = "Bedrohungsempfinden des Klimawandels", title = "Bedrohungsempfinden des Klimawandels in Abhängigkeit vom Geschlecht", 
+     subtitle = " ", caption = " ") 
+
+![](README_files/figure-markdown_strict/unnamed-chunk-12-1.png)
 
 **Absatz zur Poweranalyse**
 
