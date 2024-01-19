@@ -168,10 +168,40 @@ t.test(gruppe_wissend$Verhaltensaenderung, gruppe_unwissend$Verhaltensaenderung)
 * Geschlecht (männlich / weiblich) und Bildung  haben einen Einfluss auf das Bedrohungsempfinden und die Bereitschaft das Verhalten zu ändern  
 ```{r}
 df %>%
-filter(gender != "divers") %>%
+filter(gender != "andere") %>%
 filter(edu == "(Fach-)Hochschulreife (Abitur)" | edu == "(Fach-)Hochschulabschluss (z.B. Bachelor, Master, Diplom)") %>%
 droplevels() %>%
 jmv::mancova(deps = c("Sorgen_Klimawandel", "Verhaltensaenderung"), factors = c("gender", "edu"))
+
+df %>%
+filter(gender != "andere") %>%
+filter(edu == "(Fach-)Hochschulreife (Abitur)" | edu == "(Fach-)Hochschulabschluss (z.B. Bachelor, Master, Diplom)") %>%
+droplevels() %>%
+  jmv::ANOVA(dep = Sorgen_Klimawandel, 
+               factors = c("gender", "edu"),
+              emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("gender"),c("edu"))) -> res1
+
+
+df %>%
+filter(gender != "andere") %>%
+filter(edu == "(Fach-)Hochschulreife (Abitur)" | edu == "(Fach-)Hochschulabschluss (z.B. Bachelor, Master, Diplom)") %>%
+droplevels() %>%
+  jmv::ANOVA(dep = Verhaltensaenderung, 
+               factors = c("gender", "edu"),
+              emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("gender"),c("edu"))) -> res1
+
+
+haupteffekt1 <- res1$emm[[1]]$emmTable$asDF
+haupteffekt2 <- res1$emm[[2]]$emmTable$asDF
+haupteffekt3 <- res1$emm[[1]]$emmTable$asDF
+haupteffekt4 <- res1$emm[[2]]$emmTable$asDF
+
+haupteffekt1 %>% 
+ggplot() +
+ aes(x = gender, y = mean, ymin = lower, ymax = upper) +
+    geom_errorbar(colour = "black", width = 0.2) +
+ geom_point() +
+ theme_minimal()
 
 ```
 
