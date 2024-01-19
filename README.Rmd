@@ -8,6 +8,8 @@ output: md_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+library(plotrix)
+rwthcolor <- hcictools::rwth.colorpalette()
 df <- readRDS("data/dataFromNumeric.rds")
 ```
 # Intendierte Verhaltensänderung im Klimawandel
@@ -74,7 +76,9 @@ Viele Menschen unterstützen zwar die Idee des Umweltschutzes und haben die Absi
 
 **Deskriptive Statistik**
 ```{r}
-psych::describe(df[c("age", "gender", "edu", "wissen", "NHSM", "Verhaltensaenderung", "Vertrauen_Wissenschaft", "Sorgen_Klimawandel", "Klimaschutz")])
+descriptives <- psych::describe(df[c("Verhaltensaenderung", "Vertrauen_Wissenschaft", "Sorgen_Klimawandel", "Klimaschutz", "Moral")])[,c(3,4,5,8,9)]
+descriptives$alpha <- c(0.81, 0.76, 0.87, 0.81, 0.87)
+descriptives[,c(6,1:5)]
 ```
 ```{r}
 ggplot(df) +
@@ -90,6 +94,12 @@ ggplot(df) +
   theme_minimal()
 ```
 
+```{r}
+psych::describe(df[c("age", "gender", "edu")])[,c(3,4,5,8,9)]
+```
+```{r}
+
+```
 
 **3 Zusammenhangshypothesen**
 
@@ -101,9 +111,10 @@ library(ggplot2)
 ggplot(df) +
  aes(x = edu, y = ccbi1) +
  geom_jitter(size = 1.2) +
- labs(x = "Bildungsniveau", y = "Bereitschaft Verzicht auf tierische Produkte", title = "Bereitschaft auf tierische Produkte zu verzichten in Abhängigkeit vom Bildungsniveau", 
+ labs(x = "Bildungsniveau", y = " Verzichtbereitschaft tierische Produkte", title = "Bereitschaft auf tierische Produkte zu verzichten in Abhängigkeit vom Bildungsniveau", 
  subtitle = " ", caption = " ") + 
-scale_x_discrete(guide = guide_axis(angle = 90)) +
+scale_x_discrete(guide = guide_axis(angle = 45),labels = c("kein Abschluss", "Hauptschule", "Realschule", "Abitur", "Uni-Abschluss", "Promotion", "Andere")) +  
+scale_y_continuous(breaks = seq(1, 6, by = 1)) +
  theme_minimal()
 
 ```
@@ -112,7 +123,17 @@ scale_x_discrete(guide = guide_axis(angle = 90)) +
 * Je höher das Alter desto höher ist die Bereitschaft Wasser zu sparen
 ```{r, echo=FALSE}
 cor.test((df$ccbi5), (df$age), method = c( "kendall")) 
-## Feedback JRH: Auch hier bitte nicht Pearson benutzen.
+
+library(ggplot2)
+
+ggplot(df) +
+ aes(x = age, y = ccbi5) +
+ geom_jitter(size = 1.2) +
+ labs(x = "Alter", y = "Bereitschaft Wasser zu sparen", title = "Bereitschaft Wasser zu sparen in Abhängigkeit vom Alter", 
+ subtitle = " ", caption = " ") + 
+scale_y_continuous(breaks = seq(1, 6, by = 1)) +
+scale_x_continuous(breaks = seq(20, 70, by = 10))
+ theme_minimal()
 ```
 
 
@@ -120,6 +141,14 @@ cor.test((df$ccbi5), (df$age), method = c( "kendall"))
 ```{r, echo=FALSE}
 
 cor.test(df$Verhaltensaenderung, df$NHSM)
+ggplot(df) +
+ aes(x = NHSM, y = Verhaltensaenderung) +
+ geom_jitter(size = 1.2) +
+ labs(x = "Nutzungshäufigkeit sozialer Medien", y = "Bereitschaft Verhalten zu ändern", title = "Bereitschaft Verhalten zu ändern in Abhängigkeit \nvon der Nutzungshäufigkeit sozialer Medien", 
+ subtitle = " ", caption = " ") + 
+scale_x_continuous(limits = c(0,36), breaks = seq(0, 36, by = 6)) +
+scale_y_continuous(breaks = seq(1, 6, by = 1)) +
+ theme_minimal()
 ```
 
 
@@ -143,6 +172,23 @@ jmv::linReg(data=df, dep = "Verhaltensaenderung", covs = c("Vertrauen_Wissenscha
 gruppe_vegan <- df[df$ccs1=="vegan",]
 gruppe_nicht_vegan <- df[df$ccs1!="vegan",]
 t.test(gruppe_vegan$Verhaltensaenderung, gruppe_nicht_vegan$Verhaltensaenderung)
+
+gruppe_vegan$vegan <- "vegan"
+gruppe_nicht_vegan$vegan <- "nicht vegan"
+df2 <- rbind(gruppe_vegan, gruppe_nicht_vegan)
+df2$vegan <- as.factor(df2$vegan)
+
+df2 %>% 
+  group_by(vegan) %>% 
+  summarise(mean = mean(Verhaltensaenderung, na.rm = TRUE), ci = std.error(Verhaltensaenderung)*1.96) %>% 
+ggplot() +
+ aes(x = vegan, y = mean, ymin = mean - ci, ymax = mean + ci) +
+  geom_errorbar(colour = rwthcolor$black, width = 0.2) +
+ geom_point(size=3) + 
+ scale_y_continuous(breaks = seq(1, 6, by = 1), limits = c(1,6)) +
+ theme_minimal() + 
+labs(x = "Ernährungsform", y = "Bereitschaft Verhalten zu ändern", title = "Bereitschaft Verhalten zu ändern in Abhängigkeit von der Ernährungsform", 
+ subtitle = " ", caption = " ")
 ```
 
 * Männer und Frauen unterscheiden sich bezüglich ihrer Bereitschaft das Verhalten zu ändern
@@ -151,6 +197,19 @@ t.test(gruppe_vegan$Verhaltensaenderung, gruppe_nicht_vegan$Verhaltensaenderung)
 gruppe_frauen <- df[df$gender== "weiblich",]
 gruppe_maenner <- df[df$gender== "männlich",]
 t.test(gruppe_frauen$Verhaltensaenderung, gruppe_maenner$Verhaltensaenderung)
+
+df %>% 
+  filter(gender != "andere") %>% 
+  group_by(gender) %>% 
+  summarise(mean = mean(Verhaltensaenderung, na.rm = TRUE), ci = std.error(Verhaltensaenderung)*1.96) %>% 
+ggplot() +
+ aes(x = gender, y = mean, ymin = mean - ci, ymax = mean + ci) +
+  geom_errorbar(colour = rwthcolor$black, width = 0.2) +
+ geom_point(size=3) +
+ scale_y_continuous(breaks = seq(1, 6, by = 1), limits = c(1,6)) +
+ theme_minimal() + 
+labs(x = "Geschlecht", y = "Bereitschaft Verhalten zu ändern", title = "Bereitschaft Verhalten zu ändern in Abhängigkeit vom Geschlecht", 
+ subtitle = " ", caption = " ")
 ```
 
 * Menschen die mehr über den Klimawandel wissen ändern eher ihr Verhalten als Menschen die weniger über den Klimawandel wissen 
@@ -159,8 +218,24 @@ t.test(gruppe_frauen$Verhaltensaenderung, gruppe_maenner$Verhaltensaenderung)
 gruppe_wissend <- df[df$wissen>= 12,]
 gruppe_unwissend <- df[df$wissen< 12,]
 t.test(gruppe_wissend$Verhaltensaenderung, gruppe_unwissend$Verhaltensaenderung)
-```
 
+gruppe_wissend$wissen <- "wissend"
+gruppe_unwissend$wissen <- "unwissend"
+df3 <- rbind(gruppe_wissend, gruppe_unwissend)
+df3$wissen <- as.factor(df3$wissen)
+
+df3 %>% 
+  group_by(wissen) %>% 
+  summarise(mean = mean(Verhaltensaenderung, na.rm = TRUE), ci = std.error(Verhaltensaenderung)*1.96) %>% 
+ggplot() +
+ aes(x = wissen, y = mean, ymin = mean - ci, ymax = mean + ci) +
+  geom_errorbar(colour = rwthcolor$black, width = 0.2) +
+ geom_point(size=3) + 
+scale_y_continuous(breaks = seq(1, 6, by = 1), limits = c(1,6)) +
+ theme_minimal() + 
+labs(x = "Wissen über Klimawandel", y = "Bereitschaft Verhalten zu ändern", title = "Bereitschaft Verhalten zu ändern in Abhängigkeit vom Wissen über den Klimawandel", 
+ subtitle = " ", caption = " ")
+```
 
 
 **Unterschiedshypothese MANOVA**
