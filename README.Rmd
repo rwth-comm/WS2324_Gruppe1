@@ -75,12 +75,12 @@ Viele Menschen unterstützen zwar die Idee des Umweltschutzes und haben die Absi
 **Quelle:** Williams, M. N., & Jaftha, B. A. (2020). Perceptions of powerlessness are negatively associated with taking action on climate change: A preregistered replication. Ecopsychology, 12(4)
 
 **Deskriptive Statistik**
-```{r}
+```{r, echo = F}
 descriptives <- psych::describe(df[c("Verhaltensaenderung", "Vertrauen_Wissenschaft", "Sorgen_Klimawandel", "Klimaschutz", "Moral")])[,c(3,4,5,8,9)]
 descriptives$alpha <- c(0.81, 0.76, 0.87, 0.81, 0.87)
 descriptives[,c(6,1:5)]
 ```
-```{r}
+```{r, echo = F}
 ggplot(df) +
   aes(x = age) +
   geom_histogram(bins = 30L, fill = "#112446") +
@@ -94,7 +94,7 @@ ggplot(df) +
   theme_minimal()
 ```
 
-```{r}
+```{r, echo = F}
 psych::describe(df[c("age", "gender", "edu")])[,c(3,4,5,8,9)]
 ```
 ```{r}
@@ -214,7 +214,7 @@ labs(x = "Geschlecht", y = "Bereitschaft Verhalten zu ändern", title = "Bereits
 
 * Menschen die mehr über den Klimawandel wissen ändern eher ihr Verhalten als Menschen die weniger über den Klimawandel wissen 
 
-```{r}
+```{r, echo = F}
 gruppe_wissend <- df[df$wissen>= 12,]
 gruppe_unwissend <- df[df$wissen< 12,]
 t.test(gruppe_wissend$Verhaltensaenderung, gruppe_unwissend$Verhaltensaenderung)
@@ -241,7 +241,7 @@ labs(x = "Wissen über Klimawandel", y = "Bereitschaft Verhalten zu ändern", ti
 **Unterschiedshypothese MANOVA**
 
 * Geschlecht (männlich / weiblich) und Bildung  haben einen Einfluss auf das Bedrohungsempfinden und die Bereitschaft das Verhalten zu ändern  
-```{r}
+```{r, echo = F}
 df %>%
 filter(gender != "andere") %>%
 filter(edu == "(Fach-)Hochschulreife (Abitur)" | edu == "(Fach-)Hochschulabschluss (z.B. Bachelor, Master, Diplom)") %>%

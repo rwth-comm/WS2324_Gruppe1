@@ -80,10 +80,6 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 **Deskriptive Statistik**
 
-    descriptives <- psych::describe(df[c("Verhaltensaenderung", "Vertrauen_Wissenschaft", "Sorgen_Klimawandel", "Klimaschutz", "Moral")])[,c(3,4,5,8,9)]
-    descriptives$alpha <- c(0.81, 0.76, 0.87, 0.81, 0.87)
-    descriptives[,c(6,1:5)]
-
     ##                        alpha mean   sd median  min  max
     ## Verhaltensaenderung     0.81 4.16 0.94   4.33 1.00 6.00
     ## Vertrauen_Wissenschaft  0.76 2.81 0.63   2.83 1.56 4.78
@@ -91,21 +87,7 @@ change: A preregistered replication. Ecopsychology, 12(4)
     ## Klimaschutz             0.81 4.14 0.74   4.17 1.92 5.83
     ## Moral                   0.87 4.87 0.95   5.00 1.00 6.00
 
-    ggplot(df) +
-      aes(x = age) +
-      geom_histogram(bins = 30L, fill = "#112446") +
-      labs(
-        x = " Alter",
-        y = " Anzahl Proband*innen",
-        title = "XY Stichprobe ",
-        subtitle = "Histogramm Altersverteilung",
-        caption = paste0("30 bins, N=",nrow(df))
-      ) +
-      theme_minimal()
-
 ![](README_files/figure-markdown_strict/unnamed-chunk-2-1.png)
-
-    psych::describe(df[c("age", "gender", "edu")])[,c(3,4,5,8,9)]
 
     ##          mean    sd median min max
     ## age     30.15 12.38     24  18  67
@@ -262,10 +244,6 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 <!-- -->
 
-    gruppe_wissend <- df[df$wissen>= 12,]
-    gruppe_unwissend <- df[df$wissen< 12,]
-    t.test(gruppe_wissend$Verhaltensaenderung, gruppe_unwissend$Verhaltensaenderung)
-
     ## 
     ##  Welch Two Sample t-test
     ## 
@@ -278,23 +256,6 @@ change: A preregistered replication. Ecopsychology, 12(4)
     ## mean of x mean of y 
     ##  4.198851  4.016260
 
-    gruppe_wissend$wissen <- "wissend"
-    gruppe_unwissend$wissen <- "unwissend"
-    df3 <- rbind(gruppe_wissend, gruppe_unwissend)
-    df3$wissen <- as.factor(df3$wissen)
-
-    df3 %>% 
-      group_by(wissen) %>% 
-      summarise(mean = mean(Verhaltensaenderung, na.rm = TRUE), ci = std.error(Verhaltensaenderung)*1.96) %>% 
-    ggplot() +
-     aes(x = wissen, y = mean, ymin = mean - ci, ymax = mean + ci) +
-      geom_errorbar(colour = rwthcolor$black, width = 0.2) +
-     geom_point(size=3) + 
-    scale_y_continuous(breaks = seq(1, 6, by = 1), limits = c(1,6)) +
-     theme_minimal() + 
-    labs(x = "Wissen über Klimawandel", y = "Bereitschaft Verhalten zu ändern", title = "Bereitschaft Verhalten zu ändern in Abhängigkeit vom Wissen über den Klimawandel", 
-     subtitle = " ", caption = " ")
-
 ![](README_files/figure-markdown_strict/unnamed-chunk-11-1.png)
 
 **Unterschiedshypothese MANOVA**
@@ -304,12 +265,6 @@ change: A preregistered replication. Ecopsychology, 12(4)
     ändern
 
 <!-- -->
-
-    df %>%
-    filter(gender != "andere") %>%
-    filter(edu == "(Fach-)Hochschulreife (Abitur)" | edu == "(Fach-)Hochschulabschluss (z.B. Bachelor, Master, Diplom)") %>%
-    droplevels() %>%
-    jmv::mancova(deps = c("Sorgen_Klimawandel", "Verhaltensaenderung"), factors = c("gender", "edu"))
 
     ## 
     ##  MANCOVA
@@ -348,39 +303,6 @@ change: A preregistered replication. Ecopsychology, 12(4)
     ##    Residuals     Sorgen_Klimawandel        105.5093508    158      0.6677807                              
     ##                  Verhaltensaenderung       127.6682616    158      0.8080270                              
     ##  ────────────────────────────────────────────────────────────────────────────────────────────────────────
-
-    df %>%
-    filter(gender != "andere") %>%
-    filter(edu == "(Fach-)Hochschulreife (Abitur)" | edu == "(Fach-)Hochschulabschluss (z.B. Bachelor, Master, Diplom)") %>%
-    droplevels() %>%
-      jmv::ANOVA(dep = Sorgen_Klimawandel, 
-                   factors = c("gender", "edu"),
-                  emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("gender"),c("edu"))) -> res1
-
-
-    df %>%
-    filter(gender != "andere") %>%
-    filter(edu == "(Fach-)Hochschulreife (Abitur)" | edu == "(Fach-)Hochschulabschluss (z.B. Bachelor, Master, Diplom)") %>%
-    droplevels() %>%
-      jmv::ANOVA(dep = Verhaltensaenderung, 
-                   factors = c("gender", "edu"),
-                  emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("gender"),c("edu"))) -> res2
-
-
-    haupteffekt1 <- res1$emm[[1]]$emmTable$asDF
-    haupteffekt2 <- res1$emm[[2]]$emmTable$asDF
-    haupteffekt3 <- res1$emm[[1]]$emmTable$asDF
-    haupteffekt4 <- res1$emm[[2]]$emmTable$asDF
-
-    haupteffekt1 %>% 
-    ggplot() +
-     aes(x = gender, y = mean, ymin = lower, ymax = upper) +
-        geom_errorbar(colour = "black", width = 0.2) +
-     geom_point(size=3) +
-      scale_y_continuous(breaks = seq(1, 6, by = 1), limits = c(1,6)) +
-     theme_minimal() + 
-    labs(x = "Geschlecht", y = "Bedrohungsempfinden des Klimawandels", title = "Bedrohungsempfinden des Klimawandels in Abhängigkeit vom Geschlecht", 
-     subtitle = " ", caption = " ") 
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-12-1.png)
 
