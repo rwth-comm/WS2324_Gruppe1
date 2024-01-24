@@ -15,25 +15,28 @@ umzusetzen?
 
 ## Faktorenraum
 
-Soziale Medien
-![Faktorenraum](README_files/figure-markdown_strict/Faktorenraum.png)
+<figure>
+<img src="README_files/figure-markdown_strict/Faktorenraum.png"
+alt="Faktorenraum" />
+<figcaption aria-hidden="true">Faktorenraum</figcaption>
+</figure>
 
 ## Operationalisierungen
 
 **Demographische Daten**
 
 -   Alter: Freitext
--   Geschlecht:m/w/d
--   Bildungsabschluss:Auswahlmöglichkeiten
--   Haushaltseinkommen:Auswahlmöglichkeiten
+-   Geschlecht: m/w/d
+-   Bildungsabschluss: Auswahlmöglichkeiten
+-   Haushaltseinkommen: Auswahlmöglichkeiten
 -   Arbeitstatus: Auswahlmöglichkeiten
 -   Kinder im Haushalt: Auswahlmöglichkeiten (keine/ 1/ 2/ 3/ mehr)
 -   Wohnort: Auswahlmöglichkeiten (Stadt/Land etc.)
--   Internaler/Externaler Kontrollfokus:
+-   Internaler/Externaler Kontrollfokus
 
 **Nutzerfaktoren**
 
--   Ernährungsform:Auswahlmöglichkeit (vegan/ vegetarisch/ alles/
+-   Ernährungsform: Auswahlmöglichkeiten (vegan/ vegetarisch/ alles/
     pescetarisch etc.)
 -   Autobesitz: (ja/nein)
 -   Auto Km: Freitext
@@ -46,24 +49,24 @@ Soziale Medien
 -   Bedrohungsempfinden: Likertskala
 -   Selbstwirksamkeit: Likertskala
 -   Handlungswirksamkeit: Likertskala
--   Kostenerwartung:
--   moralische Normen:
--   soziale Normen:
+-   Kostenerwartung
+-   moralische Normen
+-   soziale Normen
 -   Nutzung und Einfluss von Social Media: selbsterstellte
     Einfachauswahl / Matrix / Likertskala (4 Items)
 
 **Big 5-Persönlichkeit**
 
--   Offenheit:
--   Gewissenhaftigkeit:
--   Extraversion:
--   Verträglichkeit:
--   Eurozentrismus:
+-   Offenheit
+-   Gewissenhaftigkeit
+-   Extraversion
+-   Verträglichkeit
+-   Eurozentrismus
 
-Unser Text: Viele Menschen unterstützen zwar die Idee des Umweltschutzes
-und haben die Absicht, nachhaltiger zu leben, aber ihre tatsächlichen
-Handlungen entsprechen oft nicht diesen Absichten. Wenn wir die
-Diskrepanz zwischen Absicht und Verhalten verstehen, können gezieltere
+Viele Menschen unterstützen zwar die Idee des Umweltschutzes und haben
+die Absicht, nachhaltiger zu leben, aber ihre tatsächlichen Handlungen
+entsprechen oft nicht diesen Absichten. Wenn wir die Diskrepanz zwischen
+Absicht und Verhalten verstehen, können gezieltere
 Informationskampagnen, Anreize und Bildungsprogramme entwickelt werden,
 um die Umsetzung nachhaltiger Praktiken zu fördern. Es ermöglicht auch,
 Hindernisse zu identifizieren, die Menschen davon abhalten, ihre
@@ -78,7 +81,9 @@ um den Klimawandel einzudämmen und nachhaltiger zu leben.
 powerlessness are negatively associated with taking action on climate
 change: A preregistered replication. Ecopsychology, 12(4)
 
-**Deskriptive Statistik**
+## Deskriptive Statistik
+
+**Skalen**
 
     ##                        alpha mean   sd median  min  max
     ## Verhaltensaenderung     0.81 4.16 0.94   4.33 1.00 6.00
@@ -87,6 +92,7 @@ change: A preregistered replication. Ecopsychology, 12(4)
     ## Klimaschutz             0.81 4.14 0.74   4.17 1.92 5.83
     ## Moral                   0.87 4.87 0.95   5.00 1.00 6.00
 
+**Stichprobenbeschreibung**
 ![](README_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
     ##          mean    sd median min max
@@ -96,8 +102,8 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 **3 Zusammenhangshypothesen**
 
--   Je höher das Bildungsniveau desto höher ist die Bereitschaft
-    tierische Podukte zu vermeiden
+-   H1: Je höher das Bildungsniveau, desto höher ist die Bereitschaft
+    tierische Podukte zu vermeiden.
 
 <!-- -->
 
@@ -113,7 +119,8 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
--   Je höher das Alter desto höher ist die Bereitschaft Wasser zu sparen
+-   H2: Je höher das Alter, desto höher ist die Bereitschaft Wasser zu
+    sparen.
 
 <!-- -->
 
@@ -129,8 +136,8 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-6-1.png)
 
--   Es gibt einen Zusammenhang zwischen der Nutzungshäufigkeit sozialer
-    Medien und der Bereitschaft das Verhalten zu ändern
+-   H3: Es gibt einen Zusammenhang zwischen der Nutzungshäufigkeit
+    sozialer Medien und der Bereitschaft das Verhalten zu ändern.
 
 <!-- -->
 
@@ -150,8 +157,8 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 **Zusammenhangshypothese lineare Regression**
 
--   Die Bereitschaft das Verhalten zu ändern ist abhängig von dem
-    Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
+-   H4: Die Bereitschaft das Verhalten zu ändern ist abhängig von dem
+    Misstrauen in die Wissenschaft und dem Bedrohungsempfinden.
 
 <!-- -->
 
@@ -201,8 +208,8 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 **3 Unterschiedshypothesen**
 
--   Menschen, die sich vegan ernähren sind eher dazu bereit ihr
-    Verhalten zu ändern als Menschen die sich nicht vegan ernähren
+-   H5: Menschen, die sich vegan ernähren sind eher dazu bereit ihr
+    Verhalten zu ändern als Menschen die sich nicht vegan ernähren.
 
 <!-- -->
 
@@ -220,8 +227,8 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-9-1.png)
 
--   Männer und Frauen unterscheiden sich bezüglich ihrer Bereitschaft
-    das Verhalten zu ändern
+-   H6: Männer und Frauen unterscheiden sich bezüglich ihrer
+    Bereitschaft das Verhalten zu ändern.
 
 <!-- -->
 
@@ -239,8 +246,8 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 
--   Menschen die mehr über den Klimawandel wissen ändern eher ihr
-    Verhalten als Menschen die weniger über den Klimawandel wissen
+-   H7: Menschen, die mehr über den Klimawandel wissen, ändern eher ihr
+    Verhalten als Menschen, die weniger über den Klimawandel wissen.
 
 <!-- -->
 
@@ -260,9 +267,9 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 **Unterschiedshypothese MANOVA**
 
--   Geschlecht (männlich / weiblich) und Bildung haben einen Einfluss
-    auf das Bedrohungsempfinden und die Bereitschaft das Verhalten zu
-    ändern
+-   H8: Geschlecht (männlich / weiblich) und Bildung haben einen
+    Einfluss auf das Bedrohungsempfinden und die Bereitschaft das
+    Verhalten zu ändern.
 
 <!-- -->
 
