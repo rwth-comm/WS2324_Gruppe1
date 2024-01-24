@@ -315,13 +315,13 @@ change: A preregistered replication. Ecopsychology, 12(4)
 
 **Absatz zur Poweranalyse**
 
--   Man braucht bei einer schwacher Korrelation(r=0.1) ca. 782
+-   Man braucht bei einer schwachen Korrelation (r=0.1) ca. 782
     Proband:innen um eine Power von 0.8 zu erhalten
 
--   Man braucht bei einer mittleren Korrelation(r=0.3) ca. 84
+-   Man braucht bei einer mittleren Korrelation (r=0.3) ca. 84
     Proband:innen um eine Power von 0.8 zu erhalten
 
--   Man braucht bei einer starken Korrelation(r=0.5) ca. 28
+-   Man braucht bei einer starken Korrelation (r=0.5) ca. 28
     Proband:innen um eine Power von 0.8 zu erhalten
 
 -   Bei 140 Proband:innen muss der Korrelationseffekt = 0,23 sein damit
