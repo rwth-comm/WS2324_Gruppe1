@@ -87,8 +87,8 @@ ggplot(df) +
   labs(
     x = " Alter",
     y = " Anzahl Proband*innen",
-    title = "XY Stichprobe ",
-    subtitle = "Histogramm Altersverteilung",
+    title = "Altersverteilung im Histogramm",
+    subtitle = " ",
     caption = paste0("30 bins, N=",nrow(df))
   ) +
   theme_minimal()
@@ -103,7 +103,7 @@ psych::describe(df[c("age", "gender", "edu")])[,c(3,4,5,8,9)]
 
 **3 Zusammenhangshypothesen**
 
-* Je höher das Bildungsniveau desto höher ist die Bereitschaft tierische Podukte zu vermeiden
+* H1: Je höher das Bildungsniveau, desto höher ist die Bereitschaft tierische Podukte zu vermeiden.
 ```{r, echo=FALSE}
 cor.test(df$ccbi1, as.numeric(df$edu), method = c( "kendall")) 
 library(ggplot2)
@@ -111,7 +111,7 @@ library(ggplot2)
 ggplot(df) +
  aes(x = edu, y = ccbi1) +
  geom_jitter(size = 1.2) +
- labs(x = "Bildungsniveau", y = " Verzichtbereitschaft tierische Produkte", title = "Bereitschaft auf tierische Produkte zu verzichten in Abhängigkeit vom Bildungsniveau", 
+ labs(x = "Bildungsniveau", y = " Verzichtbereitschaft tierische Produkte", title = "Bereitschaft auf tierische Produkte zu verzichten \nin Abhängigkeit vom Bildungsniveau", 
  subtitle = " ", caption = " ") + 
 scale_x_discrete(guide = guide_axis(angle = 45),labels = c("kein Abschluss", "Hauptschule", "Realschule", "Abitur", "Uni-Abschluss", "Promotion", "Andere")) +  
 scale_y_continuous(breaks = seq(1, 6, by = 1)) +
@@ -120,7 +120,7 @@ scale_y_continuous(breaks = seq(1, 6, by = 1)) +
 ```
 
 
-* Je höher das Alter desto höher ist die Bereitschaft Wasser zu sparen
+* H2: Je höher das Alter, desto höher ist die Bereitschaft Wasser zu sparen.
 ```{r, echo=FALSE}
 cor.test((df$ccbi5), (df$age), method = c( "kendall")) 
 
@@ -137,7 +137,7 @@ scale_x_continuous(breaks = seq(20, 70, by = 10)) +
 ```
 
 
-* Es gibt einen Zusammenhang zwischen der Nutzungshäufigkeit sozialer Medien und der Bereitschaft das Verhalten zu ändern
+* H3: Es gibt einen Zusammenhang zwischen der Nutzungshäufigkeit sozialer Medien und der Bereitschaft das Verhalten zu ändern.
 ```{r, echo=FALSE}
 
 cor.test(df$Verhaltensaenderung, df$NHSM)
@@ -156,7 +156,7 @@ scale_y_continuous(breaks = seq(1, 6, by = 1)) +
 
 **Zusammenhangshypothese lineare Regression**
 
-* Die Bereitschaft das Verhalten zu ändern ist abhängig von dem Misstrauen in die Wissenschaft und dem Bedrohungsempfinden
+* H4: Die Bereitschaft das Verhalten zu ändern ist abhängig von dem Misstrauen in die Wissenschaft und dem Bedrohungsempfinden.
 ```{r, echo=FALSE}
 jmv::linReg(data=df, dep = "Verhaltensaenderung", covs = c("Vertrauen_Wissenschaft", "Sorgen_Klimawandel"), blocks = c("Sorgen_Klimawandel", "Vertrauen_Wissenschaft"),r2Adj = TRUE, stdEst = TRUE, modelTest = TRUE)
 ```
@@ -165,7 +165,7 @@ jmv::linReg(data=df, dep = "Verhaltensaenderung", covs = c("Vertrauen_Wissenscha
 
 **3 Unterschiedshypothesen**
 
-* Menschen, die sich vegan ernähren sind eher dazu bereit ihr Verhalten zu ändern als Menschen die sich nicht vegan ernähren
+* H5: Menschen, die sich vegan ernähren sind eher dazu bereit ihr Verhalten zu ändern als Menschen die sich nicht vegan ernähren.
 
 ```{r, echo=FALSE}
 
@@ -191,7 +191,7 @@ labs(x = "Ernährungsform", y = "Bereitschaft Verhalten zu ändern", title = "Be
  subtitle = " ", caption = " ")
 ```
 
-* Männer und Frauen unterscheiden sich bezüglich ihrer Bereitschaft das Verhalten zu ändern
+* H6: Männer und Frauen unterscheiden sich bezüglich ihrer Bereitschaft das Verhalten zu ändern.
 ```{r, echo=FALSE}
 
 gruppe_frauen <- df[df$gender== "weiblich",]
@@ -212,7 +212,7 @@ labs(x = "Geschlecht", y = "Bereitschaft Verhalten zu ändern", title = "Bereits
  subtitle = " ", caption = " ")
 ```
 
-* Menschen die mehr über den Klimawandel wissen ändern eher ihr Verhalten als Menschen die weniger über den Klimawandel wissen 
+* H7: Menschen, die mehr über den Klimawandel wissen, ändern eher ihr Verhalten als Menschen, die weniger über den Klimawandel wissen. 
 
 ```{r, echo = F}
 gruppe_wissend <- df[df$wissen>= 12,]
@@ -240,7 +240,7 @@ labs(x = "Wissen über Klimawandel", y = "Bereitschaft Verhalten zu ändern", ti
 
 **Unterschiedshypothese MANOVA**
 
-* Geschlecht (männlich / weiblich) und Bildung  haben einen Einfluss auf das Bedrohungsempfinden und die Bereitschaft das Verhalten zu ändern  
+* H8: Geschlecht (männlich / weiblich) und Bildung haben einen Einfluss auf das Bedrohungsempfinden und die Bereitschaft das Verhalten zu ändern. 
 ```{r, echo = F}
 df %>%
 filter(gender != "andere") %>%
