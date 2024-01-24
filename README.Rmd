@@ -75,21 +75,23 @@ Viele Menschen unterstützen zwar die Idee des Umweltschutzes und haben die Absi
 ## Deskriptive Statistik
 **Skalen**
 ```{r, echo = F}
-descriptives <- psych::describe(df[c("Verhaltensaenderung", "Vertrauen_Wissenschaft", "Sorgen_Klimawandel", "Klimaschutz", "Moral")])[,c(3,4,5,8,9)]
-descriptives$alpha <- c(0.81, 0.76, 0.87, 0.81, 0.87)
-descriptives[,c(6,1:5)]
+descriptives <- psych::describe(df[c("Verhaltensaenderung", "Vertrauen_Wissenschaft", "Sorgen_Klimawandel", "Klimaschutz")])[,c(3,4,5,8,9)]
+descriptives$alpha <- c(0.81, 0.76, 0.87, 0.81)
+descriptives[,c(6, 1:5)]
 ```
 **Stichprobenbeschreibung**
 ```{r, echo = F}
 ggplot(df) +
   aes(x = age) +
   geom_histogram(bins = 30L, fill = "#112446") +
+  geom_vline(xintercept = mean(df$age), color = "#57ab27", linewidth = 0.5) +
+  annotate("text", x=mean(df$age, na.rm = TRUE)+4, y= 40, label=paste0("M = ", round(mean(df$age), digits = 2)), angle=0) +
   labs(
     x = " Alter",
     y = " Anzahl Proband*innen",
-    title = "Altersverteilung im Histogramm",
-    subtitle = " ",
-    caption = paste0("30 bins, N=",nrow(df))
+    title = "Junge, unimodal verteilte Stichprobe",
+    subtitle = "Altersverteilung im Histogramm",
+    caption = paste0("30 bins, n=",nrow(df))
   ) +
   theme_minimal()
 ```
@@ -165,7 +167,7 @@ jmv::linReg(data=df, dep = "Verhaltensaenderung", covs = c("Vertrauen_Wissenscha
 
 **3 Unterschiedshypothesen**
 
-* H5: Menschen, die sich vegan ernähren sind eher dazu bereit ihr Verhalten zu ändern als Menschen die sich nicht vegan ernähren.
+* H5: Menschen, die sich vegan ernähren sind eher dazu bereit ihr Verhalten zu ändern, als Menschen die sich nicht vegan ernähren.
 
 ```{r, echo=FALSE}
 

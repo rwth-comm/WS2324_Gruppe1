@@ -90,7 +90,6 @@ change: A preregistered replication. Ecopsychology, 12(4)
     ## Vertrauen_Wissenschaft  0.76 2.81 0.63   2.83 1.56 4.78
     ## Sorgen_Klimawandel      0.87 4.87 0.91   5.00 1.50 6.00
     ## Klimaschutz             0.81 4.14 0.74   4.17 1.92 5.83
-    ## Moral                   0.87 4.87 0.95   5.00 1.00 6.00
 
 **Stichprobenbeschreibung**
 ![](README_files/figure-markdown_strict/unnamed-chunk-2-1.png)
@@ -209,7 +208,7 @@ change: A preregistered replication. Ecopsychology, 12(4)
 **3 Unterschiedshypothesen**
 
 -   H5: Menschen, die sich vegan ernähren sind eher dazu bereit ihr
-    Verhalten zu ändern als Menschen die sich nicht vegan ernähren.
+    Verhalten zu ändern, als Menschen die sich nicht vegan ernähren.
 
 <!-- -->
 
