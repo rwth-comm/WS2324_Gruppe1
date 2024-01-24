@@ -287,7 +287,7 @@ labs(x = "Geschlecht", y = "Bedrohungsempfinden des Klimawandels", title = "Bedr
 
 **Absatz zur Poweranalyse**
 
-* Man braucht bei einer schwacher Korrelation(r=0.1) ca. 782 Proband:innen um eine Power von 0.8 zu erhalten
+* Man braucht bei einer schwachen Korrelation(r=0.1) ca. 782 Proband:innen um eine Power von 0.8 zu erhalten
 
 * Man braucht bei einer mittleren Korrelation(r=0.3) ca. 84 Proband:innen um eine Power von 0.8 zu erhalten
 
