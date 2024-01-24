@@ -296,5 +296,5 @@ labs(x = "Geschlecht", y = "Bedrohungsempfinden des Klimawandels", title = "Bedr
 * Bei 140 Proband:innen muss der Korrelationseffekt = 0,23 sein damit der Effekt nicht übersehen werden kann
 
 ## R Markdown
-
+ 
 
