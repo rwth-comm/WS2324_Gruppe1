@@ -2,10 +2,10 @@
 
 ## Teammitglieder
 
--   Gianna Betz
--   Blerona Bytyqi
--   Kyra Heiden
--   Elena Hahn
+-   GB
+-   BB
+-   KH
+-   EH
 
 # Forschungsfragen
 
